@@ -1,0 +1,197 @@
+/* pages/activeWInfo/activeWInfo.wxss */
+/* pages/activeInfo/activeInfo.wxss */
+page{
+  background-color: #F5F5F5;
+  color:#333;
+  height: 100%;
+}
+
+
+.section3{
+  width: 100%;
+  /* min-height: 950rpx; */
+  background-color:  rgb(236, 234, 234);
+  padding:2rpx;
+}
+
+.corpTitle{
+  font-size: 60rpx;
+}
+
+.corpText{
+  font-size: 32rpx;
+}
+
+
+.section-btn {
+  background-color: #153661;
+  /* margin:0; */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding:0;
+  width:100%;
+  height: 60rpx;
+  font-size: 36rpx;
+  color: white;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  border: none;
+}
+
+.projectIconView {
+  padding-top: 2rpx;
+  /* height: 150rpx; */
+}
+
+.projectIconMargin {
+  border-radius: 4px;
+}
+
+.corpText{
+  font-size: 32rpx;
+}
+
+.tmrText{
+  background-color: #333;
+  /* margin:0; */
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding:0;
+  width:100rpx;
+  height: 100rpx;
+  font-size: 40rpx;
+  color: #7FFF00;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: none;
+
+}
+
+
+.section-btn-gree {
+  background-color: #008B8B;
+  /* margin:0; */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding:0;
+  /* width:100%; */
+  height: 60rpx;
+  font-size: 36rpx;
+  color: white;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  border: none;
+}
+
+
+.iconView {
+  line-height: 60rpx;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 4px;
+  vertical-align:middle;
+  object-fit: cover;
+}
+
+
+.content_item{
+  height: 66rpx;  
+  line-height: 66rpx;
+  width: 97%;
+  /* background-color:#fff; */
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 10rpx;    
+  display: flex;    
+  align-items: center;     
+  border-bottom: 1rpx solid #b8b8b8;
+}
+
+.arrow{
+  width: 10px;     
+  height: 10px;     
+  border-top: 1px solid #999;     
+  border-right: 1px solid #999;     
+  position: absolute;     
+  right: 40rpx;     
+  transform: rotate(45deg);     
+  margin-top:10rpx;     
+  }
+
+  .content_switch{
+    height: 130rpx;  
+    /* line-height: 130rpx; */
+    width: 97%;
+    /* background-color:#fff; */
+    margin-top: 10rpx;
+    margin-bottom: 4rpx;
+    padding-top: 10rpx;
+    padding-bottom: 4rpx;
+    padding-left: 10rpx;    
+    display: flex;    
+    align-items: center;         
+  }
+
+  
+.button_sel{
+  
+  height: 130rpx;
+  line-height: 40rpx;
+  text-align: center;
+  vertical-align: middle;
+  background-color:#b3e9cb;
+  /* padding-left: 80rpx;
+  padding-right: 80rpx; */
+  
+  border-radius: 4px;
+  color: #153661;
+  font-weight: bold;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  padding: 0rpx;
+  border:  1rpx solid #b8b8b8;
+  margin-left: 20rpx;
+}
+
+.oneComment{
+  padding-top: 6rpx;
+  background-color: white;
+  margin-bottom: 6rpx;
+}
+
+.mnuText{
+  line-height: 50rpx;
+  /* width: 340rpx; */
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}
+
+
+.commentText{
+  line-height: 30rpx;
+  /* width: 340rpx; */
+  font-size: 20rpx;
+  padding-left: 20rpx;
+}
+
+.commentRichText{
+  /* line-height: 30rpx; */
+  /* width: 340rpx; */
+  font-size: 26rpx;
+   padding-left: 10rpx; 
+   padding-right: 10rpx; 
+}
+
+.mnuTextRed{
+  line-height: 50rpx;
+  color: #ca1111;
+  /* width: 340rpx; */
+  font-size: 30rpx;
+  padding-left: 20rpx;
+}

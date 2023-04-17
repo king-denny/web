@@ -1,0 +1,118 @@
+<!--pages/my/my.wxml-->
+
+
+<view class="section1">
+  <view >
+    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+    <view class="userinfo-avatar" bindtap="showMyBasicInfo">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+  </view>
+  <view class="name">
+    <view>{{company}}</view>
+    <view>{{userName}}</view>
+    <view class="phone">{{mobile}}</view>
+  </view>
+  
+  <view class="idcheckspan" bindtap='doIdCheck'>
+    <block wx:if="{{idCheckedStatus=='1'}}" >
+      <image class="stockcheck" mode="widthFix" src="/icons/idcheck-d.png"></image>
+      <view class="chechtextd">已实名验证</view>
+    </block >
+    <block wx:elif="{{idCheckedStatus=='-1'}}" >
+      <image class="stockcheck" mode="widthFix" src="/icons/idcheck-u.png"></image>
+      <view class="chechtextd">实名验证不通过</view>
+    </block >
+    <block wx:else >
+      <image class="stockcheck" mode="widthFix" src="/icons/idcheck-u.png"></image>
+      <view class="chechtext">点击实名验证</view>
+    </block>
+  </view>
+    
+</view>
+
+
+<!-- 最后一版，第三块 -->
+<view class="section3">  
+  <!-- 一般会员 -->
+  <block>
+    <view class="content_span">
+        <view class="content_item" data-infoId="3" bindtap='showMyBasicInfo'>
+        <image class="iconView" mode="widthFix" src="/icons/my11.png"></image>
+        <view class="mnuText" >基本信息</view>
+        <view class="arrow"></view>
+      </view>
+      <!-- <view class="content_item" data-infoId="1" bindtap='showmyfavinfo'>
+        <image class="iconView" mode="widthFix" src="/icons/q.png"></image>
+        <view class="mnuText">偏好设置</view>
+        <view class="arrow"></view>
+      </view> -->
+      <view class="content_item" data-infoId="2" bindtap='showmyAcinfo'>
+        <image class="iconView" mode="widthFix" src="/icons/my3.png"></image>
+        <view class="mnuText">我的活动</view>
+        <view class="arrow"></view>        
+      </view>
+      <view class="content_item" data-infoId="2" bindtap='showmyProinfo'>
+        <image class="iconView" mode="widthFix" src="/icons/project.png"></image>
+        <view class="mnuText">我的项目</view>
+        <view class="arrow"></view>        
+      </view>
+      <view class="content_item" data-infoId="2" bindtap='showmyVip'>
+        <image class="iconView" mode="widthFix" src="/icons/q.png"></image>
+        <view class="mnuText">我的会员</view>
+        <view class="arrow"></view>        
+      </view>
+      <view class="content_item_nobo" data-infoId="2" bindtap='showmyMessage'>
+        <image class="iconView" mode="widthFix" src="/icons/report.png"></image>
+        <view class="mnuText">我的消息</view>
+        <view class="arrow"></view>        
+      </view>
+    </view>    
+  </block>
+
+</view>
+
+<view class='mask' hidden="maskFlagHiden">
+    <view class="line_item ">
+        <text class="billItemText">联系电话:</text> 
+        <input class="billItemWide" bindinput="phoneInput"  value="{{mobileAll}}" ></input>
+    </view>
+    <view class="line_item ">
+        <text class="billItemText">咨询信息:</text>        
+    </view>
+    <textarea class="billItemWideMulti" bindinput="messInput"  value="{{messContent}}" ></textarea>
+    <view class="line_item button_center">   
+        <view class="button_sel "  >发送信息</view>
+        <view class="buttoaaaan_default" bindtap="cancelSend" >取消</view>
+      
+    </view>
+</view>
+
+<!--圆形点击框  -->
+<view class="round-click">
+   <navigator url='/pages/addimages/addimages' bindtap="callMe">联系我们</navigator >
+</view>
+
+
+
+<!-- 
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+</view> -->

@@ -1,0 +1,327 @@
+/**app.wxss**/
+@import './styles/iconfont';
+@import '/utils/wxss/weui.wxss';
+
+
+/* 在微信小程序中不支持通配符 '*' */
+/* *{
+    margin:0;
+} */
+page,view,text,swiper,swiper-item,image,navigator{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* 支持变量 */
+page{
+  /* 定义主题颜色 变量*/
+  --themeColor:#eb4450;
+  /* 定义统一字体大小 假设设计稿是 375px
+      1px = 2rpx
+      14px = 28rpx;
+  */
+  font-size: 28rpx;
+}
+
+image{
+  width:100%;
+}
+
+/* 文字超过一行不显示,以省略号代替 */
+.singleline-content-ellipsis {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+/* 文字超过一行不显示,裁剪文字 */
+.singleline-content-clip {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: clip;
+}
+
+.singleline-content-br {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: pre-wrap
+  }
+
+
+indicatorItem{
+width: 100%
+}
+
+.clearfix:after{
+display: block;
+content:'';
+clear: both;
+}
+
+/* 联系我们 */
+.round-click{
+  height: 120rpx;
+  width: 120rpx;
+  background-color: rgba(21,54,97,.7);
+  border-radius: 100%;
+  position: fixed;
+  bottom: 260rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.round-click-2{
+height: 120rpx;
+width: 120rpx;
+background-color: #c88c0e;
+border-radius: 100%;
+position: fixed;
+bottom: 60rpx;
+right: 20rpx;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9;
+}
+
+.txt_center { 
+text-align: center;
+}
+
+
+.round-click-2 navigator{
+font-size: 32rpx;
+max-width: 80rpx;
+color: #fff;
+text-align: center;
+}
+
+.round-click navigator{
+  font-size: 32rpx;
+  max-width: 80rpx;
+  color: #fff;
+  text-align: center;
+}
+
+
+.multiLineText {
+color: rgb(32, 27, 27);
+font-size: 35rpx;
+text-overflow:ellipsis;
+z-index: -1;
+display: -webkit-box;
+word-break: break-all;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+}
+
+.arrow_basic{
+width: 10px;     
+height: 10px;     
+border-top: 2px solid #999;     
+border-right: 2px solid #999;     
+position: absolute;     
+right: 20rpx;     
+transform: rotate(45deg);     
+margin-top:10rpx;     
+}
+
+
+/* 新增自定义 */
+.layout_Style{
+  display: flex;
+}
+
+.layout_left{
+  float: left;
+}
+.layout_float_left{
+  float: left;
+}
+.layout_right{
+  float: right;
+}
+.layout_float_right{
+  float: right;
+}
+
+.layout_viewbottom{
+  position: relative;
+}
+.layout_bottom{
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 6rpx;
+}
+
+.layout_Center{
+  justify-content: center;
+  align-items: center;
+}
+
+.pad_10{
+  padding-left: 10rpx;
+}
+
+.pad_30{
+  padding-left: 30rpx;
+}
+
+.pad_left_10{
+  padding-left: 10rpx;
+}
+
+.pad_left_5{
+  padding-left: 5rpx;
+}
+.pad_top_10{
+  padding-top: 10rpx;
+}
+.pad_top_30{
+  padding-top: 30rpx;
+}
+.pad_bot_10{
+  padding-bottom: 10rpx;
+}
+
+.pad_bot_30{
+  padding-bottom: 30rpx;
+}
+
+.pad_bot_130{
+  padding-bottom: 130rpx;
+}
+
+
+.mar_bot_30{
+  margin-bottom: 30rpx;
+}
+
+.mar_left_30{
+  margin-left: 30rpx;
+}
+.mar_left_10{
+  margin-left: 10rpx;
+}
+
+
+.mar_bot_10{
+  margin-bottom: 30rpx;
+}
+.mar_top_30{
+  margin-top: 30rpx;
+}
+.text_font_b{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.text_font_m{
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.text_font_l{
+  font-size: 26rpx;
+}
+
+.text_font_l28{
+  font-size: 30rpx;
+}
+.text_red{
+  color: red;
+  font-weight: bold;
+}
+.text_gray{
+  color: #999;    
+}
+.text_black{
+  color: #000;    
+}
+.text_white{
+  color: white;
+  font-weight: bold;
+}
+
+.titleText{
+  font-size:35rpx;    
+  padding-left:12rpx;
+  font-weight: 700;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom:10rpx;
+}
+
+.smallText{
+  font-size:14px;    
+  padding-left:2rpx;
+  
+  height: 60rpx;
+  line-height: 60rpx;
+  
+}
+
+.width_100{
+  width: 100%;
+}
+
+.width_50{
+  width: 50%;
+}
+
+.width_60{
+  width: 60%;
+}
+
+.width_30{
+  width: 30%;
+}
+
+.width_20{
+  width: 20%;
+}
+
+/* 容器类 */
+.sgContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(236, 234, 234);    
+}
+
+.content_title{
+  height: 60rpx;  
+  line-height: 60rpx;
+  width: 100%;
+  background-color:#fff;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 10rpx;    
+  display: flex;    
+  align-items: center;     
+  border-bottom: 1rpx solid #b8b8b8;
+}
+
+.swiper_def{
+  height: 100vh;
+  /* padding-top: 310rpx; */
+}
+
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+

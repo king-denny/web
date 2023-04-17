@@ -1,0 +1,133 @@
+<!--pages/myActive/myActive.wxml-->
+<view class="sgContainer">
+
+  
+<view class="section1">
+  <view >
+    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+    <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+  </view>
+  <view class="name">
+    <view>广州南沙诺华数据有限公司</view>
+    <view>{{userName}}</view>
+    <view class="phone">{{mobile}}</view>
+  </view>
+  <view class="idcheckspan" ></view>    
+</view>
+
+<view class="content_switch">
+        <view class="{{navbarActiveIndex === 0 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{0}}" catchtap="onNavBarTap">
+          <view ><image class="iconView" mode="widthFix" src="/icons/act.png"/> </view>
+          <view class="text_font_l">我的活动</view> 
+        </view>     
+
+        <view class="{{navbarActiveIndex === 1 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{1}}" catchtap="onNavBarTap">            
+            <view ><image class="iconView" mode="widthFix" src="/icons/project.png"/> </view>
+            <view class="text_font_l">我的项目</view> 
+        </view>
+       
+        <view class="{{navbarActiveIndex === 2 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{2}}" catchtap="onNavBarTap">
+          <view ><image class="iconView" mode="widthFix" src="/icons/my11.png"/> </view>
+          <view class="text_font_l" >我的评论</view> 
+        </view>     
+        <view class="{{navbarActiveIndex ===3 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{3}}" catchtap="onNavBarTap">
+          <view ><image class="iconView" mode="widthFix" src="/icons/saw.png"/> </view>
+          <view class="text_font_l" >我的浏览</view> 
+        </view>           
+  </view>
+
+  <swiper class="swiper_def" current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+       
+       <swiper-item wx:key="{{0}}"  >
+         <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+           
+           <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
+               <view class="layout_Style" >
+                 <view class="articleTitle" > 从都花月宴 | 一场沉浸式体验风雅宋宴 </view>                                                            
+                 <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_yan.png"/> </view>
+               </view>                    
+               
+           </view> 
+
+           <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
+               <view class="layout_Style" >                 
+              <view class="articleTitle" >
+                 <view  > 东南亚美食展 </view>   
+                 <view class="layout_Style layout_bottom">
+                   <image class="commentIconView pad_left_10" mode="widthFix" src="/icons/user.png"></image>
+                    <view class="projectTitle " >19 </view>  
+
+                    <!-- <view class="pad_left_10"> 报名</view> -->
+                 </view>
+              </view>
+                                                             
+               <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_ms.png"/> </view>
+              
+               </view>                    
+               
+             </view>  
+
+         </scroll-view>
+       </swiper-item>
+     
+       <swiper-item wx:key="{{1}}"  >
+         <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+              <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   
+                  <view class="layout_Style" >
+                    <view class="articleTitle" > 区规划用地拍卖，升值空间大 </view>                                                            
+                    <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_p2.jpg"/> </view>
+                  </view>                    
+                  <view class="layout_Style"> 
+                    <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                    <view class="projectTitle mar_left_10" >10 </view>  
+                    <image class="commentIconView mar_left_30" mode="widthFix" src="/icons/user.png"></image>
+                    <view class="projectTitle mar_left_10" >9 </view>  
+                  </view>                    
+                </view>  
+         </scroll-view>
+       </swiper-item>
+
+       <swiper-item wx:key="{{2}}"  >
+         <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+          <view class="oneComment pad_top_10 ">
+            <view class="layout_Style">
+              <image class="iconView" mode="widthFix" src="/image/s7.png"></image>
+              <view>
+                <view class="commentText" >1382</view>
+                <view class="commentText" >今天 14:00</view>
+              </view>
+            </view>       
+            <view class="commentRichText" >初步资料已经提交给区财政局，待审批。
+            </view>        
+          </view> 
+          
+          <view class="oneComment pad_top_10 ">
+            <view class="layout_Style">
+              <image class="iconView" mode="widthFix" src="/image/s7.png"></image>
+              <view>
+                <view class="commentText" >1382</view>
+                <view class="commentText" >今天 11:00</view>
+              </view>
+            </view>       
+            <view class="commentRichText" >对会员*** 评论 :   **待人友好。
+            </view>        
+          </view> 
+          
+
+         </scroll-view>
+       </swiper-item>
+
+       <swiper-item wx:key="{{3}}"  >
+         <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+           
+
+         </scroll-view>
+       </swiper-item>
+
+   </swiper> 
+
+
+
+</view>

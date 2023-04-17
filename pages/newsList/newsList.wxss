@@ -1,0 +1,146 @@
+/* pages/newsList/newsList.wxss */
+
+page{
+  background-color: #F5F5F5;
+  color:#333;
+  height: 100%;
+}
+
+.section3{
+  width: 100%;
+  /* min-height: 950rpx; */
+  background-color:  rgb(236, 234, 234);
+  padding:2rpx;
+}
+
+.corpTitle{
+  font-size: 60rpx;
+}
+
+.corpText{
+  font-size: 32rpx;
+}
+
+
+.section-btn {
+  background-color: #153661;
+  /* margin:0; */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding:0;
+  width:90%;
+  height: 60rpx;
+  font-size: 36rpx;
+  color: white;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  border: none;
+}
+
+.projectIconView {
+  padding-top: 2rpx;
+  /* height: 150rpx; */
+}
+
+.projectIconMargin {
+
+  border-radius: 4px;
+}
+
+
+.proclaEach {
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+  background-color: white; 
+  padding:0 20rpx;
+  border-bottom:2rpx dashed #ccc;
+}
+
+.proclaIconMargin {
+  height: 38rpx;
+  width: 38rpx;
+}
+
+.iconView-t {
+  height: 50rpx;
+}
+
+.proclaTitle {
+  flex: 1;
+  font-size: 32rpx;
+  text-align: left;
+  padding-left: 10rpx;
+}
+
+
+.iconView {
+  line-height: 70rpx;
+  width: 50rpx;
+  height: 70rpx;
+  border-radius: 4px;
+  vertical-align:middle;
+  align-items: center; 
+  object-fit: cover;
+  padding-top: 6rpx;
+}
+
+
+.search-container{
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #ddd;
+}
+
+.search-left{
+  background-color: #eee;
+  flex: 2;
+  border-radius: 30rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.search-left image{
+  width: 88rpx;
+  height: 68rpx;
+  padding: 10rpx 20rpx;
+  vertical-align: middle;   
+}
+.search-left input{
+  display: inline-block;
+  vertical-align: middle;
+  height: 70rpx;
+  width: calc(100% - 88rpx);
+}
+.search-right{
+  padding-left: 20rpx;
+}
+.search-right image{
+  width: 80rpx;
+  height: 80rpx;
+  vertical-align: middle;
+}
+
+
+/* 公告样式 */
+.proclaContainer {
+  margin:10rpx 0;
+  width: 100%;
+  /* padding:16rpx 10rpx 8rpx; */
+}
+
+.proclaNoData {
+  display: flex;
+  margin-top:20rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  align-items: center;    /**子view垂直居中*/
+  /* vertical-align: center; *垂直居中 */
+  justify-content: center; /**内容居中*/
+  /* flex-direction:row; 子view排列方式row--水平 column--垂直 */
+}

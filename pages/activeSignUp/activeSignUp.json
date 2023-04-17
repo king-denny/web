@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText":"活动报名",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle":"dark" 
+}

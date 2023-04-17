@@ -1,0 +1,47 @@
+<!--pages/myProjectList/myProjectLIst.wxml-->
+<view class="sgContainer">
+
+  
+<view class="section1">
+  <view >
+    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+    <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+  </view>
+  <view class="name">
+    <view>{{companyName}}</view>
+    <view>{{userName}}</view>
+    <view class="phone">{{mobile}}</view>
+  </view>
+  <view class="idcheckspan" ></view>    
+</view>
+
+<view class="navbar">
+  <block wx:for="{{navbarTitle}}" wx:key="index">
+    <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
+  <view wx:if="{{isProjectDataHave && navbarActiveIndex ==0 }}" class="hotProductView">
+  
+  <block wx:for="{{projectList}}" wx:key="index">
+    <view class="projectEach" id="{{item.projectId}}" data-proId="{{item.projectId}}" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
+      <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{item.projectUrl}}"/> </view>
+      <view class="articleTitle" > {{item.projectName}} </view>     
+      <view class="layout_Style"> 
+        <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
+        <view class="projectTitle " >{{item.signNum}} </view>  
+      </view>                    
+    </view> 
+  </block>
+  </view>
+  <view wx:if="{{!isProjectDataHave}}" class="proclaNoData">没有项目信息</view>
+</view>
+
+<view class="round-click-2">
+   <navigator url='/pages/addimages/addimages' bindtap="callMe">发布项目</navigator >
+</view>
+
+

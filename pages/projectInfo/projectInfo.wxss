@@ -1,0 +1,241 @@
+/* pages/projectInfo/projectInfo.wxss */
+
+page{
+  background-color: #F5F5F5;
+  color:#333;
+  height: 100%;
+}
+
+.section3{
+  width: 100%;
+  /* min-height: 950rpx; */
+  background-color:  rgb(236, 234, 234);
+  padding:2rpx;
+}
+
+.corpTitle{
+  font-size: 60rpx;
+}
+
+.corpText{
+  font-size: 32rpx;
+}
+
+
+.section-btn {
+  background-color: #153661;
+  /* margin:0; */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding:0;
+  width:90%;
+  height: 60rpx;
+  font-size: 36rpx;
+  color: white;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  border: none;
+}
+
+.projectIconView {
+  padding-top: 2rpx;
+  /* height: 150rpx; */
+}
+
+.projectIconMargin {
+
+  border-radius: 4px;
+}
+
+
+.commentIconView {
+  line-height: 70rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 4px;
+  vertical-align:middle;
+  object-fit: cover;
+}
+
+
+.recommend_span{
+  height: 50rpx;  
+  width: 100%;
+  background-color: white;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  padding-left: 10rpx;      
+  border-left: 8rpx solid #153661
+}
+
+.recommend_font{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+
+.content_span{
+  /* height: 520rpx;   */
+  width: 100%;
+  background-color:#fff;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  /* margin-left: 6rpx;
+  margin-right: 6rpx; */
+  /* padding-left: 10rpx;           */
+  /* border-radius: 8px;      */
+}
+
+
+.commentGroup{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color:#fff;
+  position: fixed; 
+  bottom: 10rpx;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  z-index: 9;
+  border-top: 1rpx solid #afb0b1;
+}
+.commentGroupSpan{
+  height: 60rpx;
+  width: 70%;
+  /* width: 100; */
+   /* background-color: rgba(21,54,97,.7);  */
+   background-color:rgb(219, 218, 218);
+   border-radius: 30rpx;
+   margin-left: 20rpx;
+   margin-top: 10rpx;
+   padding-top: 10rpx;
+   padding-left: 30rpx;
+   padding-bottom: 10rpx;
+   /* border-radius: 100%;  */
+   
+  /* right: 20rpx; */
+  
+}
+
+
+.search-left{
+  background-color: #eee;
+  flex: 1;
+  border-radius: 30rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.search-left image{
+  width: 88rpx;
+  height: 68rpx;
+  padding: 10rpx 20rpx;
+  vertical-align: middle;   
+}
+.search-left input{
+  display: inline-block;
+  vertical-align: middle;
+  height: 70rpx;
+  width: calc(100% - 88rpx);
+}
+.search-right{
+  display: flex;
+  margin-left: 30rpx;
+  height: 60rpx;
+
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 20rpx;
+  /* background-color: rgb(44, 43, 43); */
+  border-radius: 20rpx;
+  /* border: 3rpx solid #153661 */
+}
+.search-right image{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+.oneComment{
+  padding-top: 6rpx;
+  background-color: white;
+  margin-bottom: 6rpx;
+}
+
+.oneJoiner{
+  padding-top: 6rpx;
+  width: 100rpx;
+  margin-bottom: 6rpx;
+  vertical-align: middle;   
+  text-align: center;
+    align-items: center;
+  justify-content: center;
+}
+
+.iconView {
+  line-height: 60rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 15px;
+  vertical-align:middle;
+  object-fit: cover;
+}
+
+.commentText{
+  line-height: 30rpx;
+  /* width: 340rpx; */
+  font-size: 20rpx;
+  padding-left: 20rpx;
+}
+
+.commentRichText{
+  /* line-height: 30rpx; */
+  /* width: 340rpx; */
+  font-size: 26rpx;
+   padding-left: 10rpx; 
+   padding-right: 10rpx; 
+}
+
+
+.process_wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 10rpx;
+  background-color:#fff;
+  }
+
+  .process_wrap .line {
+    width: 96%;
+    height: 6rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background:#e41212;
+  /*   width: 400rpx;
+    height: 2rpx;
+    background: #B5B8C2; */
+  }
+  
+  .process_wrap .active_line {
+    position:absolute;
+   
+    top: -4rpx;
+    left: 0;
+    max-width: 96%;
+    height: 8rpx;
+    background:linear-gradient(83deg, #84B3FF 0%, #042e6d 100%);
+  }
+  
+  .process_wrap .spot {
+    position:absolute;
+    padding-top: 10rpx;
+    top: -20rpx;
+    left: 0;
+    width: 40rpx;
+    height: 40rpx;
+    background: #1A73FF;
+    box-shadow: 0px 2px 10px 0px rgba(196, 200, 204, 0.5);
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+  }

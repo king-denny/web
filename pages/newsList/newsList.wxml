@@ -1,0 +1,42 @@
+<!--pages/newsList/newsList.wxml-->
+<view class="search-container">
+  <view class="search-left">
+    <image src="../../image/search.png" />
+    <input type="text" placeholder="输入名称搜索"/>
+  </view>
+</view>
+
+<view class="sgContainer">
+  <view class="section3">
+    
+    <view wx:if="{{isProclaDataHave}}" class="proclaContainer pad_top_10 {{!showMore? 'hiddenmore' : 'showmore'}}">
+              
+      <!-- 新闻 -->
+      <block wx:for="{{proclamations}}" wx:key="index">
+          <view class="proclaEach {{index>2 ? 'more-item' : ''}}">
+          <!-- <icon class="proclaIconsfont sg-procla-icon proclaIconMargin"></icon> -->
+          <view class="iconView">
+          <image class="proclaIconMargin" src="/image/procla_icon_black.png"/>
+          </view>
+          <view class="proclaTitle .singleline-content-ellipsis" id="{{item.newId}}" data-noticeUrl="{{item.newsUrl}}" data-noticeTit="{{item.newsTitle}}" bindtap="_handleProclaTitle">
+          {{item.newsType?'【'+item.newsType +'】':''}}{{item.newsTitle}}  </view>
+          </view>                     
+        </block>
+        
+
+    </view>
+    <view wx:if="{{!isProclaDataHave}}" class="proclaNoData">暂无新闻信息</view>
+
+
+     <!-- <block wx:for="{{proclamations}}" wx:key="index">
+        <view class="proclaEach">        
+        <view class="iconView">
+        <image class="proclaIconMargin" src="/image/procla_icon_black.png"/>
+        </view>
+        <view class="proclaTitle .singleline-content-ellipsis" id="{{item.id}}" data-noticeUrl="{{item.noticeUrl}}" data-noticeTit="{{item.noticeTitle}}" bindtap="_handleProclaTitle">
+        {{item.noticeType?'【'+item.noticeType +'】':''}}{{item.noticeTitle}}  </view>
+        </view>     
+      </block>  -->
+
+  </view>
+</view>

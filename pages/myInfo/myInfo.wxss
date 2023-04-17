@@ -1,0 +1,118 @@
+/* pages/myInfo/myInfo.wxss */
+
+.section1{
+  width:98%;
+  height:auto;
+  margin-top: 10rpx;
+  margin-left: 12rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;    
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 12px;
+}
+
+  .imageViewContainer{
+    width: 96%;
+    justify-content: center;
+    align-items: center;
+    padding:2rpx;
+  }
+
+  .button_center{
+    justify-content: center;
+    align-items: center;
+}
+
+  
+  .line_item{
+    height: 60rpx;  
+    line-height: 60rpx;
+    width: 97%;
+    background-color:#fff;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    padding-left: 10rpx;    
+    display: flex;    
+    align-items: center;     
+    /* border-bottom: 1rpx solid #b8b8b8; */
+  }
+
+  .line_item_btn{
+    height: 60rpx;  
+    line-height: 60rpx;
+    width: 97%;
+    margin-top: 40rpx;
+    margin-bottom: 10rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    padding-left: 10rpx;    
+    display: flex;    
+    align-items: center;     
+    /* border-bottom: 1rpx solid #b8b8b8; */
+  }
+  .billItemText{
+    width: 30%;
+    height: 60rpx;
+    text-align: center;
+    font-size: 32rpx;
+  }
+
+  .billItemWide{
+    width: 70%;
+    height: 60rpx;
+    border-bottom: 1rpx solid #b8b8b8; 
+  }
+
+  .billItemWideOver{
+    width: 70%;
+    height: 60rpx;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #b8b8b8; 
+  }
+
+  .billItemWidePicker{
+    width: 99%;
+    height: 60rpx;
+    
+  }
+
+  .section-btn {
+    background-color: #153661;
+    margin:0;
+    padding:0;
+    margin-top: 30rpx;
+    margin-bottom: 20rpx;
+    width:80%;
+    height: 66rpx;
+    font-size: 32rpx;
+    color: white;
+    line-height: 66rpx;
+    text-align: center;
+    border-radius: 50rpx;
+    border: none;
+  }
+
+  .section-code {
+    width: 120rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: white;
+    text-align: left;
+    margin:0;
+    padding:0;
+  }
+  
+  .section-code:after{
+    border: none;
+  }
+  
+  .section-code text{
+    display: block;
+    font-size: 28rpx;
+    color: #636bdc;
+  }
+
+  

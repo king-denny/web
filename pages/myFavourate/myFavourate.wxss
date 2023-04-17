@@ -1,0 +1,121 @@
+/* pages/myFavourate/myFavourate.wxss */
+page{
+  background-color: #F5F5F5;
+  color:#333;
+  height: 100%;
+}
+.section1{
+  width:100%;
+  height: 200rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.content_span{
+  height: 220rpx;  
+  width: 98%;
+  background-color:#fff;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 6rpx;
+  margin-right: 6rpx;
+  padding-left: 10rpx;          
+  border-radius: 8px;     
+}
+
+.idcheckspan{
+  width: 130rpx;
+  height: 110rpx;
+  text-align: center;
+}
+.section3{
+  width: 100%;
+  /* min-height: 950rpx; */
+  background-color:  rgb(236, 234, 234);
+  padding:2rpx;
+}
+
+button{
+ 
+  border-radius:40rpx;
+  text-align:left;
+  font-size:30rpx;background-color:rgba(255,255,255,1);border:2rpx solid #caccce;color:#8a8e99;
+  padding:0rpx 30rpx;
+  margin:0rpx 10rpx 10rpx 0rpx
+}
+
+button::after{border:none}
+button.active{background-color:#009ee6;border:2rpx solid #009ee6;color:#fff}
+
+
+
+.fav_default{
+  border-radius:40rpx;
+  text-align:left;
+  font-size:30rpx;background-color:rgba(255,255,255,1);border:2rpx solid #caccce;color:#8a8e99;
+  padding:0rpx 30rpx;
+  margin:0rpx 10rpx 10rpx 0rpx 
+}
+
+.fav_active{
+  background-color:#009ee6;
+  border:2rpx solid #009ee6;color:#fff
+}
+
+.butflex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+}
+
+
+.line_item_btn{
+  height: 60rpx;  
+  line-height: 60rpx;
+  width: 97%;
+  
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 10rpx;    
+  display: flex;    
+  align-items: center;     
+  /* border-bottom: 1rpx solid #b8b8b8; */
+}
+
+.button_center{
+  justify-content: center;
+  align-items: center;
+}
+
+
+.section-btn {
+  background-color: #153661;
+  margin:0;
+  padding:0;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  width:80%;
+  height: 66rpx;
+  font-size: 32rpx;
+  color: white;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  border: none;
+}
+.name{
+  line-height: 50rpx;
+  width: 340rpx;
+  font-size: 26rpx;
+}
+
+.tile_spread{
+  column-gap: 50rpx;
+  column-count: 2;
+  margin-right: 30rpx;
+  /* padding: 10rpx 10rpx 10rpx 15rpx; */
+}

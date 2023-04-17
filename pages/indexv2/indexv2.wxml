@@ -1,0 +1,198 @@
+<!--pages/indexv2/indexv2.wxml-->
+<!--index.wxml-->
+<scroll-view class="indexContainer">
+
+<swiper indicator-dots indicator-color="white" indicator-color="#DA7C0B" indicator-active-color="#153661"
+  autoplay current circular class="indexSwiper" bindtap="_handleClick">
+    <block wx:for="{{swiperList}}" wx:key="index">
+      <swiper-item class="indexSwiperItem"  >
+        <image src="{{item.url}}" data-infoId="{{index}}" bindtap='showBizInfo' />
+      </swiper-item>
+    </block>
+</swiper>
+
+<view class="content_switch">
+      <view class="{{navbarActiveIndex === 0 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{1}}" catchtap="onNavBarTap">
+        <view ><image class="iconView" mode="widthFix" src="/icons/act.png"/> </view>
+        <view class="text_font_l">活动</view> 
+      </view>     
+      <view class="{{navbarActiveIndex === 1 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{0}}" catchtap="onNavBarTap">            
+          <view ><image class="iconView" mode="widthFix" src="/icons/news.jpg"/> </view>
+          <view class="text_font_l">热点资讯</view> 
+      </view>
+     
+      <view class="{{navbarActiveIndex === 2 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{2}}" catchtap="onNavBarTap">
+        <view ><image class="iconView" mode="widthFix" src="/icons/forum.png"/> </view>
+        <view class="text_font_l" >论坛</view> 
+      </view>               
+</view>
+
+
+<swiper class="swiper_def" current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+     
+  <swiper-item wx:key="{{0}}"  >
+        <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+          
+          <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
+              <view class="layout_Style" >
+                <view class="articleTitle" > 东南亚美食展 </view>                                                            
+                <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_ms.png"/> </view>
+              </view>                    
+              
+            </view>  
+          
+            <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
+              <view class="layout_Style" >
+                <view class="articleTitle" > 从都花月宴 | 一场沉浸式体验风雅宋宴 </view>                                                            
+                <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_yan.png"/> </view>
+              </view>                    
+              
+            </view>  
+
+          <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
+              <view class="layout_Style" >
+                <view class="articleTitle" > 全新一代路虎揽胜SV · 杰拉德主题展 </view>                                                            
+                <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_luhu.png"/> </view>
+              </view>                                    
+            </view>  
+            
+            <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
+              <view class="layout_Style" >
+                <view class="articleTitle" > Garrard皇室缪斯2023\n\n新年高级珠宝展 </view>                                                            
+                <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_zb.png"/> </view>
+              </view>                    
+              
+            </view>  
+
+           
+
+           
+
+              <view  class='showOrNot' bindtap='showMoreAct'>
+                  查看更多                 
+              </view>
+      
+          
+
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item wx:key="{{1}}"  >
+        <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+          <view wx:if="{{isProclaDataHave}}" class="proclaContainer pad_top_10 {{!showMore? 'hiddenmore' : 'showmore'}}">
+              <block wx:for="{{proclamations}}" wx:key="index">
+                <view class="proclaEach {{index>2 ? 'more-item' : ''}}">
+                <!-- <icon class="proclaIconsfont sg-procla-icon proclaIconMargin"></icon> -->
+                <view class="iconView">
+                <image class="proclaIconMargin" src="/image/procla_icon_black.png"/>
+                </view>
+                <view class="proclaTitle .singleline-content-ellipsis" id="{{item.id}}" data-noticeUrl="{{item.noticeUrl}}" data-noticeTit="{{item.noticeTitle}}" bindtap="_handleProclaTitle">
+                {{item.noticeType?'【'+item.noticeType +'】':''}}{{item.noticeTitle}}  </view>
+                </view>     
+              </block>
+
+            <!-- 暂时不用 -->
+            <block wx:if="{{proclamations.length>2}}">
+              <!-- <view wx:if="{{showMore}}" class="showOrNot" bindtap='_handlelistToggle'>
+                  收起
+                <icon class="proclaIconsfont sg-up-showmore"></icon>
+              </view> -->
+              <view  class='showOrNot' bindtap='_handlelistToggle'>
+                  查看更多
+                <!-- <icon class="proclaIconsfont sg-down-showmore"></icon> -->
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+    
+    
+      <swiper-item wx:key="{{2}}"  >
+        <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+          <view wx:if="{{isGoodsDataHave}}" class="hotProductView">
+            <view class="projectEach" id="6" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
+              <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="http://www.panda-cargo.com.cn/sw_p6.jpg"/> </view>
+              <view class="articleTitle" > 500强企业人力资源招聘，覆盖中高端岗位，人员需求量大 </view>     
+              <view class="layout_Style"> 
+                <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                <view class="projectTitle " >109 </view>  
+              </view>                    
+            </view>   
+
+            <view class="projectEach" id="1" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
+              <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="http://www.panda-cargo.com.cn/sw_p4.jpg"/> </view>
+              <view class="articleTitle" > ChatGPT人工智能项目落地 </view>     
+              <view class="layout_Style"> 
+                <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                <view class="projectTitle " >109 </view>  
+              </view>                    
+            </view>   
+
+            <view  class='showOrNot' bindtap='showMoreProject'>
+                  查看更多                 
+              </view>
+            <!-- 
+            <view class="projectEachTill" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   
+              <view class="layout_Style" >
+                <view class="articleTitle" > 区规划用地拍卖，升值空间大 </view>                                                            
+                <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_p2.jpg"/> </view>
+              </view>                    
+              <view class="layout_Style"> 
+                <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                <view class="projectTitle " >10 </view>  
+              </view>                    
+            </view>   
+
+            <view class="projectEachTill" id="3" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   
+              <view class="layout_Style" >                                                                             
+                <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_p5.jpg"/> </view>
+                <view class="articleTitle" > 横沥地块充电桩投资项目，预计投入1000万，年收入390万 </view>    
+              </view>                    
+              <view class="layout_Style"> 
+                <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                <view class="projectTitle " >75 </view>  
+              </view>                    
+            </view>    -->
+
+
+            </view>
+
+        </scroll-view>
+      </swiper-item>
+
+  </swiper>   
+
+
+<!-- 2 热点资讯 -->
+
+
+<!-- 没有公告数据默认显示 -->
+<!-- <view wx:if="{{!isProclaDataHave}}" class="proclaNoData">暂无公告内容</view> -->
+
+<!-- <view class="recommend_span">  
+<view class="recommend_font">热度项目</view>  
+</view> -->
+
+<!-- 3 优质基金展示 -->
+<!-- <scroll-view scroll-y lower-threshold="100" class="hotProductView"> -->
+
+
+<code>
+<!-- 授权获得手机号码弹框提醒 -->
+<view class="container">
+  <view class="float" hidden='{{hideAuthForm}}'>
+    <view class='floatContent'>
+    <text>允许授权获取手机号</text>
+      <view class='floatText'>
+        <button  bindtap='cancleAuth' class='btn-cancle'>取消</button>
+      <button  class='btn-cancle' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">确认</button>
+      </view>
+    </view>
+  </view>
+</view>
+</code>
+
+</scroll-view>
+
+

@@ -1,0 +1,30 @@
+<!--pages/login/login.wxml-->
+
+<view class="container">
+
+<view class="logo">
+    <image mode="widthFix" src="http://"></image>
+</view>
+
+<view class="section">
+<view class="section-item">
+  <view class="section-input">
+    <input placeholder="请输入手机号码" bindinput="mobileInput"></input>
+  </view>
+</view>
+<view class="section-item">
+  <view class="section-input1">
+    <input placeholder="请输入验证码" bindinput="authcodeInput"></input>
+  </view>
+  <button class="section-code" disabled="{{isClick}}"  bindtap="gainAuthCodeAction">
+   <text>{{time}}</text>
+  </button>
+</view>
+</view>
+
+<view class="section-btn-wrapper">
+<button class="section-btn" bindtap="loginBtnClick">登  录  </button>
+</view>
+<view class="zhuce" bindtap="getRegisterPage">快速注册</view>
+</view>
+

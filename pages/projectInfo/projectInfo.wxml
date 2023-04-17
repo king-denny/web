@@ -1,0 +1,206 @@
+<!--pages/projectInfo/projectInfo.wxml-->
+<view class="sgContainer">
+  <view class="section3">
+    <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{proUrl}}"/> </view>
+    <view class="corpTitle">{{proName}}</view>
+    <view class="corpText">{{proContent}}</view>
+    <view class="layout_Style">
+       
+        <image class="commentIconView" bindtap='showCommentInfo' mode="widthFix" src="/image/comment.png"></image>
+        <view class="projectTitle mar_left_10"  bindtap='showCommentInfo'>{{commentNum}} </view>  
+        
+        <block  wx:if="{{projectAttend}}"  >
+          <view class="layout_Style mar_left_30"  bindtap='showMyGroupInfo'>  <image class="commentIconView pad_left_10" mode="widthFix" src="/icons/user.png"></image>
+          <view class="projectTitle mar_left_10" bindtap='showMyGroupInfo'>4 </view>  </view>
+         
+        </block>
+       
+    </view>
+
+    <!-- <view>
+      <button class="section-btn" bindtap="callCorp">我要参与</button>
+    </view> -->
+
+  </view>
+
+
+  <swiper class="swiper_def" current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+      <swiper-item wx:key="{{0}}"  >
+         <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+           
+          <view class="content_span ">
+              <view class="recommend_span">  
+                <view class="recommend_font">精彩评论</view>  
+              </view>
+          </view>
+
+          <block wx:for="{{commentList}}" wx:key="index">
+             
+              <view class="oneComment pad_top_10">
+                <view class="layout_Style">
+                  <image class="iconView" mode="widthFix" src="/image/meixi.png"></image>
+                  <view>
+                    <view class="commentText" >{{item.uname}}</view>
+                    <view class="commentText" >{{item.commentTime}}</view>
+                  </view>
+                </view>       
+                <view class="commentRichText" >{{item.comment}}</view>        
+              </view>
+
+           </block>
+
+
+              <!-- <view class="oneComment">
+                <view class="layout_Style">
+                  <image class="iconView" mode="widthFix" src="/image/messi.png"></image>
+                  <view>
+                    <view class="commentText" >风语者</view>
+                    <view class="commentText" >今天 09:00</view>
+                  </view>
+                </view>       
+                <view class="commentRichText" >其实关键是土壤，美国航天系统太强大，官僚系统又太浪费钱，所以社会也希望马斯克这样人出来降低成本革新。这就像中国的电商土壤，国家把基础设施建好了，市场如何走出来就靠企业家了
+                </view>                  
+              </view>
+
+              <view class="oneComment pad_top_10">
+                <view class="layout_Style">
+                  <image class="iconView" mode="widthFix" src="/image/meixi.png"></image>
+                  <view>
+                    <view class="commentText" >1382</view>
+                    <view class="commentText" >今天 13:00</view>
+                  </view>
+                </view>       
+                <view class="commentRichText" >理想的环比增速图中数据给错了，应该是9.8%。
+                </view>        
+              </view>
+
+              <view class="oneComment pad_top_10 pad_bot_130">
+                <view class="layout_Style">
+                  <image class="iconView" mode="widthFix" src="/image/s7.png"></image>
+                  <view>
+                    <view class="commentText" >1382</view>
+                    <view class="commentText" >今天 14:00</view>
+                  </view>
+                </view>       
+                <view class="commentRichText" >价格战只是为了卷死同行，然后我一家独大。美团滴滴百度云。
+                </view>        
+              </view>                        -->
+               
+         
+
+         </scroll-view>
+       </swiper-item>
+
+       <swiper-item wx:key="{{1}}"  >
+         <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
+          <view class="content_span ">
+            <view class="recommend_span">  
+              <view class="recommend_font">项目进度</view>  
+            </view>
+          </view>
+
+          <!-- <view class="process_wrap">
+            <view class="line" bindtap="moveTo"></view>
+            <view class="active_line" style="width:{{2*progress}}rpx;" bindtap="moveTo"></view>
+            <view class="spot" style="left:{{2*progress}}rpx" bindtouchmove="moveTo" catchtouchstart="buttonStart"></view>
+            <view style="margin-top:50rpx;">{{precent}}</view>
+          </view> -->
+
+          <view class="content_span ">
+            <view class="recommend_span">  
+              <view class="recommend_font">参加人员</view>  
+            </view>
+          </view>
+          <view class="oneComment">
+              <view class="layout_Style">
+
+                <block wx:for="{{memberList}}" wx:key="index">
+             
+                  <view class="oneJoiner"> 
+                    <image class="iconView" mode="widthFix" src="/image/messi.png"></image> 
+                    <view class="commentText" >{{item.company}}</view>
+                  </view>
+
+                  </block>
+
+                  <!-- <view class="oneJoiner"> 
+                    <image class="iconView" mode="widthFix" src="/image/s7.png"></image> 
+                    <view class="commentText" >广州天润</view>
+                  </view>
+
+                  <view class="oneJoiner"> 
+                    <image class="iconView" mode="widthFix" src="/image/messi.png"></image> 
+                    <view class="commentText" >云从科技</view>
+                  </view> -->
+
+                 
+              </view>
+          </view>             
+          
+
+          <view class="content_span ">
+              <view class="recommend_span">  
+                <view class="recommend_font">组内留言</view>  
+              </view>
+          </view>
+
+          <block wx:for="{{commentPriList}}" wx:key="index">
+             
+             <view class="oneComment pad_top_10">
+               <view class="layout_Style">
+                 <image class="iconView" mode="widthFix" src="/image/meixi.png"></image>
+                 <view>
+                   <view class="commentText" >{{item.uname}}</view>
+                   <view class="commentText" >{{item.commentTime}}</view>
+                 </view>
+               </view>       
+               <view class="commentRichText" >{{item.comment}}</view>        
+             </view>
+
+          </block>
+
+          <!-- <view class="oneComment pad_top_10 pad_bot_130">
+            <view class="layout_Style">
+              <image class="iconView" mode="widthFix" src="/image/s7.png"></image>
+              <view>
+                <view class="commentText" >1382</view>
+                <view class="commentText" >今天 14:00</view>
+              </view>
+            </view>       
+            <view class="commentRichText" >初步资料已经提交给区财政局，待审批。
+            </view>        
+          </view>      -->
+         
+
+         </scroll-view>
+       </swiper-item>
+
+
+  </swiper>
+
+
+   
+
+</view>
+
+
+
+<block  wx:if="{{!projectAttend}}">
+  <view class="round-click">
+   <navigator url='/pages/addimages/addimages' bindtap="iJoin">我要参与</navigator >
+  </view>
+</block>
+
+<block  wx:if="{{hadComment}}">
+  <view class="commentGroup">
+    <view class="commentGroupSpan">  
+      <input type="text" placeholder="发表评论" value="{{commentSendText}}" bindinput="commentInput"  />   
+    </view> 
+    <view class="search-right">
+      <image src="../../icons/send.png" bindtap="sendComment"/>
+    </view>
+  
+  </view>
+
+
+</block>

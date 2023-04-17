@@ -1,0 +1,73 @@
+<!--pages/activeSignUp/activeSignUp.wxml-->
+
+<view class="sgContainer">
+  <view class="section3">
+    
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/report.png"></image>
+      <view class="mnuText pad_left_10" >活动名称:{{actName}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/report.png"></image>
+      <view class="mnuText pad_left_10" >活动状态:{{actStatus}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/date.png"></image>
+      <view class="mnuText pad_left_10" >时间:{{actTime}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/pos.png"></image>
+      <view class="mnuText pad_left_10" >位置:{{actPos}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/my.png"></image>
+      <view class="mnuText pad_left_10" >参加人数限制:{{actNum}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/money.jpg"></image>
+      <view class="mnuText pad_left_10" >参加费用:{{actChg}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/user.png"></image>
+      <view class="mnuText pad_left_10" >已报名人数:{{actSignNum}}</view>       
+    </view>
+
+
+    <view class="content_span pad_top_30">
+      <view class="content_title">
+            <view class="titleText">报名信息</view>
+      </view>
+      <view class="line_item ">
+           <text class="billItemText">姓名:</text> 
+           <input class="billItemWide" type="text" bindinput="userNameInput" value="{{signName}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">联系电话:</text> 
+           <input class="billItemWide" type="text" bindinput="mobileInput" value="{{signMobile}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">公司名称:</text> 
+           <input class="billItemWide" type="text" bindinput="companyInput" value="{{signCompany}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">报名人数:</text> 
+           <input class="billItemWide" type="text" bindinput="signNumInput" value="{{signNum}}" ></input>
+       </view>
+       <view class="line_item ">
+        <text class="billItemText">备注:</text> 
+        <textarea class="billItemWideMulti" bindinput="messInput"  value="{{messContent}}" ></textarea>
+       </view>
+      
+    </view>
+
+    <view>
+        <button class="section-btn" bindtap="actSignUp"  >报名确认</button>
+    </view>
+
+  </view>
+
+
+
+
+</view>
+

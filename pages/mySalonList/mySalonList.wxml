@@ -1,0 +1,55 @@
+<!--pages/mySalonList/mySalonList.wxml-->
+<view class="sgContainer">
+
+  
+<view class="section1">
+  <view >
+    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+    <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+  </view>
+  <view class="name">
+    <view>{{companyName}}</view>
+    <view>{{userName}}</view>
+    <view class="phone">{{mobile}}</view>
+  </view>
+  <view class="idcheckspan" ></view>    
+</view>
+
+<view wx:if="{{isActDataHave}}">
+     
+  <block wx:for="{{myActList}}" wx:key="index">
+        <view class="projectEach" id="{{item.actId}}" data-actId="{{item.actId}}" data-noticeTit="{{item.hadQuestion}}"  bindtap="actOntapDetail">   
+              <view class="layout_Style" >                 
+                <view class="articleTitle layout_viewbottom" >
+                    <view>{{item.actName}}</view>   
+                    <view class="layout_Style layout_bottom">
+                      <view class="projectTitle ">{{item.actStatus}}</view>  
+                        <view wx:if="{{item.myActStatus!=''}}" class="pad_left_10" >| {{item.myActStatus}}</view>
+                        <view wx:if="{{item.signUpNum>2}}" class="layout_Style">
+                          <view class="pad_left_10">|</view>
+                          <image class="commentIconView pad_left_10" mode="widthFix" src="/icons/user.png"></image>
+                          <view class="projectTitle " >{{item.signUpNum}} </view>  
+                        </view>
+                    </view>
+                </view>                                                              
+                  <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="{{item.actUrl}}"/> 
+                  </view>               
+              </view>                                    
+          </view>  
+
+  </block>
+
+    
+</view>
+<view wx:else class="proclaNoData">没有活动信息</view>
+
+
+
+</view>
+
+<view class="round-click-2">
+   <navigator url='/pages/addimages/addimages' bindtap="callMe">发布活动</navigator >
+</view>
+

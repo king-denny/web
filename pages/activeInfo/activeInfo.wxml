@@ -1,0 +1,61 @@
+<!--pages/activeInfo/activeInfo.wxml-->
+<view class="sgContainer">
+  <view class="section3">
+    <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{actUrl}}"/> </view>
+    <view  class="corpText">{{actName}}</view>
+    <view>{{actContent}}</view>
+  
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/report.png"></image>     
+      <view class="mnuText pad_left_10" >活动状态: {{actStatus}}</view>        
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/date.png"></image>
+      <view class="mnuText pad_left_10" >时间: {{actTime}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/pos.png"></image>
+      <view class="mnuText pad_left_10" >位置:{{actPos}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/my.png"></image>
+      <view class="mnuText pad_left_10" >参加人数限制:{{actNum}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/money.jpg"></image>
+      <view class="mnuText pad_left_10" >参加费用:{{actChg}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/user.png"></image>
+      <block wx:if="{{showActSign}}">
+      <view class="mnuText pad_left_10" >已报名人数:{{actSignNum}}</view>       
+       </block>
+       <block wx:else>
+        <view class="mnuText pad_left_10" >已签到人数:{{actCheckNum}}</view>
+       </block> 
+    </view>
+
+    <!-- <block wx:if="{{!showActSign}}">
+      <view class="layout_Style pad_top_10">
+        <view>活动开始倒时</view>
+        <text class="tmrText">22</text><view class="titleText">:</view>
+        <text class="tmrText">20</text>
+      </view>
+    </block> -->
+   
+
+    <block wx:if="{{showActSign}}">
+      <view>
+        <button class="section-btn" bindtap="actSignUp"  >我要参加</button>
+      </view>
+    </block>
+    <block wx:else >
+      <view  wx:if="{{showActCheckIn}}" >
+        <button class="section-btn-gree"  bindtap="actCheckIn" >我要签到</button>
+      </view>
+    </block>
+
+  </view>
+
+
+</view>

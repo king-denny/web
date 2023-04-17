@@ -1,0 +1,22 @@
+<!--pages/newsInfo/newsInfo.wxml-->
+<view class="sgContainer">
+
+  <view class="section3">
+    <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="http://www.panda-cargo.com.cn/cop_2.png"/> </view>
+    <view class="corpTitle">
+      广州云从科技有限公司上市新闻
+    </view>
+    <text class="corpText">
+      \t\t 云从科技成立于2015年，是第一家在科创板成功上市的人工智能平台公司，股票代码为688327。\n\n   \t\t 云从科技致力于助推人工智能产业化进程和各行业智慧化转型升级。公司一方面凭借着自主研发的人工智能核心技术打造了人机协同操作系统，通过对业务数据、硬件设备和软件应用的全面连接，把握人工智能生态的核心入口，为客户提供信息化、数字化和智能化的人工智能服务；\n\n   \t\t 另一方面，公司基于人机协同操作系统，赋能智慧金融、智慧治理、智慧出行、智慧商业等应用场景，为更广泛的客户群体提供以人工智能技术为核心的行业解决方案。
+    </text>
+
+    <view>
+    
+    </view>
+
+  </view>
+
+
+  
+</view>
+

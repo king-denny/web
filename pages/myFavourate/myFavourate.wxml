@@ -1,0 +1,53 @@
+<!--pages/myFavourate/myFavourate.wxml-->
+<view class="sgContainer">
+
+  
+<view class="section1">
+  <view >
+    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+    <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+  </view>
+  <view class="name">
+    <view>{{company}}</view>
+    <view>{{userName}}</view>
+    <view class="phone">{{mobile}}</view>
+  </view>
+  <view class="idcheckspan" ></view>
+    
+</view>
+
+
+  <view class="section3">    
+      <view class="content_span">
+        <view class="text_font_m">热门咨询类，我喜欢:</view>
+        <view class="tile_spread">
+          <button wx:for="{{newsTypeList}}" wx:key="*this" data-index="{{index}}" class="{{item.checked ? 'active' : ''}}" bindtap="newTypeSwitch">{{item.nname}}</button>
+        </view>
+
+      </view>    
+    
+
+    <view class="content_span">
+        <view class="text_font_m">活动类，我喜欢::</view>
+        <view class="tile_spread">
+          <button wx:for="{{actTypeList}}" wx:key="*this" data-index="{{index}}" class="{{item.checked ? 'active' : ''}}" bindtap="actTypeSwitch">{{item.aname}}</button>
+        </view>
+      </view> 
+
+      <view class="content_span">
+        <view class="text_font_m">项目类，我喜欢:</view>
+        <view class="tile_spread">
+          <button wx:for="{{projectTypeList}}" wx:key="*this" data-index="{{index}}" class="{{item.checked ? 'active' : ''}}" bindtap="projectTypeSwitch">{{item.pname}}</button>
+        </view>
+      </view>  
+
+   
+  </view>
+
+  <view class="line_item_btn button_center">   
+            <view class="section-btn" bindtap="updateBtnClick" >保存信息</view>
+  </view>
+
+</view>

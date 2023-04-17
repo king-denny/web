@@ -1,0 +1,89 @@
+<!--pages/activeInfo/activeInfo.wxml-->
+<view class="sgContainer">
+  <view class="section3">
+    <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{actUrl}}"/> </view>
+    <view  class="corpText">{{actName}}</view>
+    <view>{{actContent}}</view>
+  
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/report.png"></image>     
+      <view class="mnuText pad_left_10" >活动状态: {{actStatus}}</view>        
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/date.png"></image>
+      <view class="mnuText pad_left_10" >日期: {{actTime}} - {{actTTime}}</view>       
+    </view>
+    <block wx:if="{{actSignNum>0}}">
+        <view class="content_item" data-infoId="3" >
+          <image class="iconView" mode="widthFix" src="/icons/user.png"></image>
+          <view class="mnuText pad_left_10" >已参加企业数: {{actSignNum}}</view>       
+        </view>
+    </block>
+
+    <block wx:if="{{!showActSign}}">
+      <view class="content_item" data-infoId="1" bindtap='showmyQuestion'>
+        <image class="iconView" mode="widthFix" src="/icons/my.png"></image>
+        <view class="mnuTextRed">已报名参加</view>
+        <view class="arrow"></view>
+      </view>
+
+      <view class="pad_left_10 pad_top_30">活动参加统计:</view>
+
+      <view class="content_switch">
+        <view class="button_sel" >
+          <view ><image class="iconView" mode="widthFix" src="/icons/mem.png"/> </view>
+          <view class="text_font_l">参加企业</view> 
+          <view class="text_font_l">81家</view>
+        </view>     
+
+        <view class="button_sel" >        
+            <view ><image class="iconView" mode="widthFix" src="/icons/my11.png"/> </view>
+            <view class="text_font_l">个人信用调查</view> 
+            <view class="text_font_l">大于3000份</view> 
+        </view>
+       
+        <view class="button_sel" >
+          <view ><image class="iconView" mode="widthFix" src="/icons/my22.png"/> </view>
+          <view class="text_font_l" >企业背景调查</view> 
+          <view class="text_font_l" >大于700份</view> 
+        </view>               
+      </view>
+
+      <view class="content_span ">
+              <view class="recommend_span">  
+                <view class="recommend_font">企业纳言</view>  
+              </view>
+      </view>
+
+      <view class="oneComment">
+        <view class="layout_Style">
+          <image class="iconView" mode="widthFix" src="/image/messi.png"></image>
+          <view>
+            <view class="commentText" >风语者</view>
+            <view class="commentText" >今天 09:00</view>
+          </view>
+        </view>       
+        <view class="commentRichText" >可以营造更好的经商环境
+        </view>                  
+      </view>
+
+
+
+    </block>
+      
+
+    <block wx:if="{{showActSign}}">
+      <view>
+        <button class="section-btn" bindtap="actSignUp"  >我要参加</button>
+      </view>
+    </block>
+    <block wx:else >
+      <!-- <view  wx:if="{{showActCheckIn}}" >
+        <button class="section-btn-gree"  bindtap="actCheckIn" >我要签到</button>
+      </view> -->
+    </block> 
+
+  </view>
+
+
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText":"会员信息",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle":"dark"  
+}

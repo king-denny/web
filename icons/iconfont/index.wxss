@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 1627776 */
+  src: url('//at.alicdn.com/t/font_1627776_oher9qe7q69.eot');
+  src: url('//at.alicdn.com/t/font_1627776_oher9qe7q69.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1627776_oher9qe7q69.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1627776_oher9qe7q69.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1627776_oher9qe7q69.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1627776_oher9qe7q69.svg#iconfont') format('svg');
+}
+
+.proclaIconsfont {
+  font-family: "iconfont" !important;
+  font-size: 30rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sg-up-showmore:before {
+  content: "\e65d";
+}
+
+.sg-down-showmore:before {
+  content: "\e60b";
+}
+
+.sg-procla-icon:before {
+  content: "\e617";
+}

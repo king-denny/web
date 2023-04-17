@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/project/project",
+    "pages/logs/logs",
+    "pages/myInfo/myInfo",
+    "pages/myFavourate/myFavourate",
+    "pages/myActive/myActive",
+    "pages/outerWeb/outerWeb",
+    "pages/login/login",
+    "pages/projectInfo/projectInfo",
+    "pages/salonInfo/salonInfo",
+    "pages/register/register",
+    "pages/newsList/newsList",
+    "pages/newsInfo/newsInfo",
+    "pages/companyList/companyList",
+    "pages/companyInfo/companyInfo",
+    "pages/activeList/activeList",
+    "pages/activeInfo/activeInfo",
+    "pages/indexv2/indexv2",
+    "pages/myIdentifyCheck/myIdentifyCheck",
+    "pages/activeSignUp/activeSignUp",
+    "pages/activeCheckIn/activeCheckIn",
+    "pages/projectAttend/projectAttend",
+    "pages/mySalonList/mySalonList",
+    "pages/myProjectList/myProjectLIst",
+    "pages/activeWInfo/activeWInfo",
+    "pages/activeQuestionare/activeQuestionare",
+    "pages/myVip/myVip",
+    "pages/Message/Message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#153661",
+    "navigationBarTitleText": "湾区创享",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#153661",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home-u.png",
+        "selectedIconPath": "icons/home.png"
+      },
+      {
+        "pagePath": "pages/project/project",
+        "text": "项目",
+        "iconPath": "icons/project-u.png",
+        "selectedIconPath": "icons/project.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/my-u.png",
+        "selectedIconPath": "icons/my.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index"
+  
+  },
+  
+  "sitemapLocation": "sitemap.json"
+}

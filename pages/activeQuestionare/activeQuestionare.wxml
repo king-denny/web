@@ -1,0 +1,44 @@
+<!--pages/activeQuestionare/activeQuestionare.wxml-->
+<!--pages/myStockCheck/myStockCheck.wxml-->
+<view class="checkContainer ">    
+        <view class="questionContent pad_top_10 pad_left_10 mar_bot_10" >
+            <!-- <view> </view> style="width: 100%; padding-left: 5rpx; font-size: 30rpx;line-height: 30rpx;font-weight: bold;" auto-height="true" name="quecontent" value="{{questionContent}}"  /> -->
+            <view style="width: 100%; padding-left: 5rpx; font-size: 30rpx;line-height: 30rpx;font-weight: bold;" auto-height="true">{{questionContent}}</view>  
+        </view>
+
+        <!-- 调查结果 -->
+        <block class="pad_left_10" wx:if="{{checkFinish}}">
+            <textarea style="width: 100%; padding-left: 5rpx; color: blue; font-size: 30rpx;line-height: 30rpx; padding-top: 10rpx;padding-bottom: 10rpx;font-weight: bold;" auto-height="true" name="queresult" value="{{checkResult}}"  />
+        </block>
+
+        <block wx:if="{{haveOpt}}">
+            <view class=" option_back pad_left_10  ">        
+                <radio-group bindchange="radioChange">
+                <block wx:for="{{questionSelList}}" wx:key="index">
+                    <label style="display: flex;padding-top: 16rpx;color: #000;" >
+                        <radio value="{{item.scoreVal}}" checked="{{item.isSel}}"/>{{item.content}}
+                    </label>                
+                </block>
+                </radio-group>         
+            </view>
+        </block>
+        <block wx:else>
+            <block wx:if="{{questionType=='3'}}" class="mar_left_10 pad_left_10">
+              <input class="billItemWide" type="text" bindinput="answerInput" value="{{questionAnswerStr}}" ></input>
+            </block>
+        </block>   
+
+</view>
+
+<view class="line_item ">   
+            <!-- <view class="section-btn"  >下一题</view> -->
+    <view style="width: 50%;">
+        <block wx:if="{{showPreBtn}}">
+            <view class="section-btn layout_left" bindtap="preQ"  >上一步</view>
+        </block>
+    </view>
+    <view style="width: 50%;">
+        <view class="section-btn-r layout_right" bindtap="nextQ" >{{nextBtnText}}</view>
+    </view>           
+</view>    
+

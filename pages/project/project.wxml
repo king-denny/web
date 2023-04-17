@@ -1,0 +1,165 @@
+<!--pages/project/project.wxml-->
+<view class="search-container">
+  <view class="search-left">
+    <image src="../../image/search.png" />
+    <input type="text" placeholder="输入名称搜索"/>    
+  </view>
+
+  <view class="search-right">
+    <image src="/icons/add-g.png" />
+    <view class="pad_left_10 text_font_l" bindtap="pubProject">发布</view>
+  </view>
+</view>
+
+<view class="academy-container">
+  <!-- 导航栏 -->
+  <view class="navbar">
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="academy-content-wrapper">
+
+    <swiper class="swiper_def" current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+        <swiper-item wx:key="{{0}}"  >
+          <scroll-view scroll-y="{{true}}" style="height:{{clientHeight?clientHeight+'px':'auto'}}" bindscrolltolower="scrollbot"> 
+        
+              <view class="tabTit box">
+                    <view class="flex1{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab">
+                        <text>{{item}}</text>
+                        <text class="triangle"></text>
+                    </view>
+              </view>
+                <!--筛选项-->
+              <view class="tabLayer" hidden="{{tab[0]}}">
+                  <text class="{{type_id==0?'active':''}}" data-id="0" data-index="0" data-txt="类型" bindtap="filter">不限</text>
+                  <text class="{{type_id==item.id?'active':''}}" wx:for="{{typeList}}" wx:key="pp" wx:for-item="item" data-id="{{item.id}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
+              </view>
+
+              <view class="tabLayer" hidden="{{tab[1]}}">
+                <view class="layout_Style">
+                  <view class="smallText">时间</view>
+                  <picker mode="date" value="{{billfdate}}" start="2001-09-01" end="2099-09-01" bindchange="bindFDateChange">
+                  <view class="dateq">{{billfdate}}</view>                        
+                  </picker>
+                  <view class="datespilt" >-</view>
+                  <picker mode="date" value="{{billtdate}}" start="2001-09-01" end="2099-09-01" bindchange="bindTDateChange">
+                      <view class="dateq">{{billtdate}}</view>
+                  </picker>
+                </view>
+                <view class="layout_Style">
+                  <view class="smallText">金额</view>                 
+                  <text class="numq">{{queryFrNum}}</text>                                       
+                  <view class="datespilt" >-</view>
+                  <text class="numq">{{queryToNum}}</text>                  
+                </view>
+                 
+              </view>
+              <view class="tabLayer" hidden="{{tab[2]}}">
+                  <!-- <text class="{{sort_type_id==0?'active':''}}" data-id="0" data-index="2" data-txt="顺序" bindtap="filter">不限</text> -->
+                  <text class="{{sort_type_id==1?'active':''}}" data-id="1" data-index="2" data-txt="按时间" bindtap="filter">按时间</text>
+                  <text class="{{sort_type_id==2?'active':''}}" data-id="2" data-index="2" data-txt="按金额" bindtap="filter">按金额</text>
+              </view>
+
+            <view wx:if="{{isProjectDataHave}}" class="proclaContainer">
+              <block wx:for="{{projectList}}" wx:key="index">
+                <view class="projectEach" id="{{item.projectId}}" data-proId="{{item.projectId}}" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
+                  <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{item.projectUrl}}"/> </view>
+                  <view class="articleTitle" > {{item.projectName}} </view>     
+                  <view class="layout_Style"> 
+                    <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
+                    <view class="projectTitle " >{{item.signNum}} </view>  
+                  </view>                    
+                </view> 
+              </block>                              
+                  <!-- <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   
+                    <view class="layout_Style" >
+                      <view class="articleTitle" > 区规划用地拍卖，升值空间大 </view>                                                            
+                      <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_p2.jpg"/> </view>
+                    </view>                    
+                    <view class="layout_Style"> 
+                      <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                      <view class="projectTitle" >10 </view>  
+                      <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
+                     <view class="projectTitle " >9 </view>  
+                    </view>                    
+                  </view>   
+
+                  <view class="projectEachTill" id="3" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   
+                    <view class="layout_Style" >                                                                             
+                      <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_p5.jpg"/> </view>
+                      <view class="articleTitle" > 横沥地块充电桩投资项目，预计投入1000万，年收入390万 </view>    
+                    </view>                    
+                    <view class="layout_Style"> 
+                      <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                      <view class="projectTitle " >75 </view>  
+                    </view>                    
+                  </view>  
+
+                  <view class="projectEach" id="6" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
+                    <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="http://www.panda-cargo.com.cn/sw_p6.jpg"/> </view>
+                    <view class="articleTitle" > 500强企业人力资源招聘，覆盖中高端岗位，人员需求量大 </view>     
+                    <view class="layout_Style"> 
+                      <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                      <view class="projectTitle " >109 </view>  
+
+                      <image class="commentIconView pad_left_10" mode="widthFix" src="/icons/redheart.jpg"></image>
+                      <view class="projectTitle " >19 </view>  
+
+                    </view>                    
+                  </view>    -->
+
+          </view>
+              <!-- 没有项目 -->
+          <view wx:if="{{!isProjectDataHave}}" class="proclaNoData mar_top_30">暂无项目信息</view>
+
+          </scroll-view>
+        </swiper-item>
+        
+        <swiper-item wx:key="{{1}}"  >
+          <scroll-view scroll-y="{{true}}" style="height:{{clientHeight?clientHeight+'px':'auto'}}" bindscrolltolower="scrollbot"> 
+            
+            <view wx:if="{{isMyProjectDataHave}}" class="proclaContainer">
+              <block wx:for="{{MyprojectList}}" wx:key="index">
+                <view class="projectEach" id="{{item.projectId}}" data-proId="{{item.projectId}}" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
+                  <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{item.projectUrl}}"/> </view>
+                  <view class="articleTitle" > {{item.projectName}} </view>     
+                  <view class="layout_Style"> 
+                    <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                    <view class="projectTitle " >{{item.signNum}} </view>  
+                  </view>                    
+                </view> 
+              </block>
+              </view>
+              <view wx:if="{{!isMyProjectDataHave}}" class="proclaNoData mar_top_30">没有项目信息</view>
+            
+            <!-- <view wx:if="{{isMyProjectDataHave}}" class="proclaContainer"> -->
+              
+
+              <!-- <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   
+                  <view class="layout_Style" >
+                    <view class="articleTitle" > 区规划用地拍卖，升值空间大 </view>                                                            
+                    <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_p2.jpg"/> </view>
+                  </view>                    
+                  <view class="layout_Style"> 
+                    <image class="commentIconView" mode="widthFix" src="/image/comment.png"></image>
+                    <view class="projectTitle" >10 </view>  
+                    <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
+                    <view class="projectTitle " >9 </view>  
+                  </view>                    
+                </view>  
+            </view> -->
+
+              <!-- 没有在办项目 -->
+            <!-- <view wx:if="{{!isMyProjectDataHave}}" class="proclaNoData">暂无项目信息</view> -->
+
+          </scroll-view>
+        </swiper-item>
+
+    </swiper>  
+
+  </view> 
+</view>

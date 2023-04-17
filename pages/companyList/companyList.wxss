@@ -1,0 +1,58 @@
+/* pages/companyList/companyList.wxss */
+page{
+  background-color: #F5F5F5;
+  color:#333;
+  height: 100%;
+}
+
+.section3{
+  width: 100%;
+  /* min-height: 950rpx; */
+  background-color:  rgb(236, 234, 234);
+  padding:2rpx;
+}
+
+.content_span{
+  height: 90rpx;  
+  width: 98%;
+  background-color:#fff;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 6rpx;
+  margin-right: 6rpx;
+  padding-left: 10rpx;          
+  border-radius: 8px;    
+  display: flex; 
+}
+
+
+.content_item{
+  height: 66rpx;  
+  line-height: 66rpx;
+  width: 97%;
+  background-color:#fff;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 10rpx;    
+  display: flex;    
+  align-items: center;     
+  /* border-bottom: 1rpx solid #b8b8b8; */
+}
+
+.iconView {
+  line-height: 60rpx;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 4px;
+  vertical-align:middle;
+  object-fit: cover;
+}
+
+.mnuText{
+  line-height: 60rpx;
+  width: 340rpx;
+  font-size: 32rpx;
+  padding-left: 20rpx;
+}

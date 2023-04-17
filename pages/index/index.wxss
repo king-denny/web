@@ -1,0 +1,500 @@
+/**index.wxss**/
+@import '../../icons/iconfont/index.wxss';
+
+page{
+  background-color: #F5F5F5;
+  color:#333;
+  height: 100%;
+}
+
+.indexContainer {
+  width: 100vw;
+  background-color: rgb(236, 234, 234);
+  display: flex;
+}
+/* 轮播图 */
+.indexSwiper {
+  width: 100%;
+  height: 400rpx;
+}
+
+/* 公告样式 */
+.proclaContainer {
+  margin:10rpx 0;
+  width: 100%;
+  /* padding:16rpx 10rpx 8rpx; */
+}
+
+.proclaNoData {
+  display: flex;
+  margin-top:20rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  align-items: center;    /**子view垂直居中*/
+  /* vertical-align: center; *垂直居中 */
+  justify-content: center; /**内容居中*/
+  /* flex-direction:row; 子view排列方式row--水平 column--垂直 */
+}
+
+/* 热卖商品样式 */
+.hotProductView {
+  flex: 1;
+  padding-left: 1%;
+  width: 99%;  
+  display: flex;  
+  flex-direction: column;
+}
+
+.indexSwiperItem image{
+  width: 100%;
+  height: 100%;
+}
+
+.hiddenmore .more-item {
+  display: none;
+}
+
+.showmore .more-item {
+  display: flex;
+}
+
+.proclaEach {
+  height: 150rpx;
+  line-height: 70rpx;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  background-color: white; 
+  padding:0 20rpx;
+  border-bottom:2rpx dashed #ccc;
+}
+
+.proclaIconMargin {
+  height: 38rpx;
+  width: 38rpx;
+}
+
+.iconView-t {
+  height: 50rpx;
+}
+
+.proclaTitle {
+  flex: 1;
+  font-size: 32rpx;
+  text-align: left;
+  padding-left: 10rpx;
+}
+
+.showOrNot {
+  display: flex;
+  line-height: 50rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.recommend_span{
+  height: 50rpx;  
+  width: 100%;
+  background-color: white;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-left: 20rpx;      
+  border-left: 8rpx solid #153661
+}
+
+.recommend_font{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.hotProductView .hotProductEachView {
+  height: 270rpx;
+  margin: 0rpx 0rpx 10rpx 0rpx;
+  display: flex;
+  /* align-items: center; */
+  background-color: white;
+  padding: 0 20rpx;
+  border-radius: 8px;
+  justify-content: space-between;  
+  flex-direction: column;
+}
+
+.SpanView {
+  height: 220rpx;
+  margin: 10rpx 0rpx 0rpx 0rpx;  
+  /* align-items: center; */
+  background-color:#fcfbf7;
+  border: solid;
+  border-width: 1rpx ;
+  border-color: #c88c0e;
+  border-radius: 8px;
+  justify-content: space-between;    
+}
+
+
+.hotProductEachView .fundinfo {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  height: 170rpx;
+}
+
+.hotProductEachView .hotProLeft {
+  width: 160rpx;
+  height: 160rpx;
+  padding-top: 10rpx;
+}
+
+.hotProRight .hotProductImg {
+  width: 260rpx;
+  height: 160rpx;
+}
+
+.hotProductEachView .hotProCenter {
+  width: 220rpx;
+  height: 160rpx;
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+
+.hotProductEachView .hotProLeft .hotImgPercentageView {
+  text-align: center;
+  font-size: 34rpx;
+  color: red;
+  line-height: 66rpx;
+}
+
+.hotProductEachView .hotProCenter .hotImgPercentageView {
+  text-align: center;
+  font-size: 34rpx;
+  color: red;
+  line-height: 66rpx;
+}
+
+.unLoginTxtView {
+  text-align: center;
+  font-size: 30rpx;
+  color: red;
+  line-height: 60rpx;
+}
+
+.hotProductEachView .hotProLeft .hotPercentageDecsView {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: gray;
+}
+
+.hotProductEachView .hotProCenter .hotPercentageDecsView {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: gray;
+}
+
+.hotProductEachView .hotProRight {
+  width: 160rpx;
+  height: 160rpx;
+  /* flex: 1;
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;  */
+}
+
+.hotProductEachView .hotProRight .hotProTitle {
+  flex: 1;
+  text-align: left;
+   font-size: 34rpx;
+   line-height: 66rpx;
+} 
+
+.hotProTitle {
+  flex: 1;
+  text-align: left;
+   font-size: 30rpx;
+   line-height: 30rpx;
+   padding-left: 20rpx;
+   padding-top: 10rpx;
+} 
+
+.hotProductEachView .hotProRight .hotProSubTitle {
+  flex: 1;
+  text-align: left;
+  font-size: 28rpx;
+  color: gray;
+}
+
+
+/* 分隔线--底部 */
+.last_line{
+    width: 90%;    /* 分隔线的长度 */
+    margin: auto;
+   
+    text-align: center;
+    font-size: 24rpx;
+    color: #aaa;
+   
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+.last_line span{
+    position: relative;
+    top: -8px;
+    padding: 0px 10px;
+}
+
+/* 手机号授权 */
+.authcontainer
+{
+  width: 60%;
+  height: 600rpx;
+}
+.float {  
+  height: 100%;  
+  width: 100%;  
+  position: fixed; 
+  background-color: rgba(0, 0, 0, 0.5);  
+  z-index: 2;  
+  top: 0;  
+  left: 0;
+}
+.floatContent {  
+  /* padding: 20rpx 0;   */
+  width: 80%;  
+  background: #fff;  
+  margin: 40% auto;  
+  border-radius: 20rpx;  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: space-around;  
+  align-items: center;  
+  position: relative;  
+  height: 255rpx;
+}
+.floatContent text {  
+  color: #000;  
+  font-size: 40rpx;  
+  display: block;  
+  margin: 0 auto;
+  position: absolute;
+  top: 50rpx;
+  /* text-align: center;   */
+  /* line-height: 60rpx;   */
+  /* border-radius: 20rpx;   */
+}
+.floatText{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+}
+.btn-cancle{
+  line-height: 100rpx;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border-radius: none;
+}
+
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  /* width: 650rpx; */
+  height: 100rpx;
+  line-height: 450rpx;
+}
+
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.projectEach {
+  margin-top: 10rpx;  
+  margin-left: 3rpx;
+  margin-right: 3rpx;
+  align-items: center;
+  background-color: white; 
+  padding:0 20rpx;
+  background-color: #F5F5F5;
+  /* border-bottom:2rpx dashed #ccc; */
+}
+
+.projectEachTill {
+  margin-top: 20rpx;  
+  margin-left: 6rpx;
+  margin-right: 6rpx;
+  align-items: center;
+  background-color: white; 
+  padding:0 20rpx;
+  background-color: #F5F5F5;
+  /* border-bottom:2rpx dashed #ccc; */
+}
+
+.projectEachSmall {
+  height: 170rpx;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+  background-color: white; 
+  padding:0 20rpx;
+  border-bottom:2rpx dashed #ccc;
+  background-color: #F5F5F5;
+  /* border-bottom:2rpx dashed #ccc; */
+}
+
+.projectIconView {
+  padding-top: 2rpx;
+  /* height: 150rpx; */
+}
+
+.projectIconViewSmall {
+  padding-top: 2rpx;
+   height: 150rpx; 
+}
+
+.projectIconMargin {
+  border-radius: 4px;
+}
+
+.projectIconMarginSmall {
+  height: 150rpx;
+  width: 298rpx;
+  border-radius: 4px;
+}
+
+.projectTitle {
+  /* flex: 1; */
+  font-size: 30rpx;
+  text-align: left;
+  padding-left: 10rpx;
+}
+
+.commentIconView {
+  line-height: 70rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 4px;
+  vertical-align:middle;
+  object-fit: cover;
+}
+
+.articleTitle {
+  flex: 1;
+  font-size: 30rpx;
+  text-align: left;
+  padding-left: 10rpx;
+}
+
+.content_switch{
+  height: 130rpx;  
+  /* line-height: 130rpx; */
+  width: 97%;
+  /* background-color:#fff; */
+  margin-top: 10rpx;
+  margin-bottom: 4rpx;
+  padding-top: 10rpx;
+  padding-bottom: 4rpx;
+  padding-left: 10rpx;    
+  display: flex;    
+  align-items: center;         
+}
+
+
+.button_line{   
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  padding: 0rpx;
+  /* display: flex; */
+}
+
+.button_default{  
+  height: 130rpx;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+  background-color:#f2f2f2;
+  /* padding-left: 80rpx;
+  padding-right: 80rpx; */
+  align-items: center;
+  border-radius: 4px;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  padding: 0rpx;
+  margin-left: 10rpx;
+}
+
+.button_sel{
+  
+  height: 130rpx;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+  background-color:#b4c7e7;
+  /* padding-left: 80rpx;
+  padding-right: 80rpx; */
+  
+  border-radius: 4px;
+  color: #153661;
+  font-weight: bold;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  padding: 0rpx;
+  border:  1rpx solid #b8b8b8;
+  margin-left: 20rpx;
+}
+
+.projectIconMargin {
+
+  border-radius: 4px;
+}
+
+.iconView {
+  line-height: 70rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 4px;
+  vertical-align:middle;
+  align-items: center; 
+  object-fit: cover;
+  padding-top: 6rpx;
+  flex:1;
+}
+.redian{
+  line-height: 70rpx;
+  border-radius: 4px;
+  align-items: center; 
+  padding-top: 6rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+
+

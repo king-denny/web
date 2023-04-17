@@ -1,0 +1,56 @@
+<!--pages/projectAttend/projectAttend.wxml-->
+
+<view class="sgContainer">
+  <view class="section3">
+    
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/report.png"></image>
+      <view class="mnuText pad_left_10" >项目名称:{{proName}}</view>       
+    </view>
+    <view class="content_item" data-infoId="3" >
+      <image class="iconView" mode="widthFix" src="/icons/date.png"></image>
+      <view class="mnuText pad_left_10" >招募止日期:{{proTime}}</view>       
+    </view>
+  
+
+    <view class="content_span pad_top_30">
+      <view class="content_title">
+            <view class="titleText">参加信息</view>
+      </view>
+      <view class="line_item ">
+           <text class="billItemText">姓名:</text> 
+           <input class="billItemWide" type="text" bindinput="userNameInput" value="{{userName}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">联系电话:</text> 
+           <input class="billItemWide" type="text" bindinput="userPhoneInput" value="{{userPhone}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">公司名称:</text> 
+           <input class="billItemWide" type="text" bindinput="userCompanyInput" value="{{userCompany}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">参加角色:</text> 
+           <view class="billItemWide" >
+           <picker class="billItemWidePicker" bindchange="bindEduPickerChange" value="{{roleIndex}}" range="{{userRoleSel}}">
+                    <view class="picker billItemWidePicker">
+                        {{userRoleSel[roleIndex]}}
+                    </view>
+          </picker>
+          </view>
+
+       </view>
+       <view class="line_item ">
+        <text class="billItemText">备注:</text> 
+        <textarea class="billItemWideMulti" bindinput="userMemoInput"  value="{{userMemo}}" ></textarea>
+       </view>
+      
+    </view>
+
+    <view>
+        <button class="section-btn" bindtap="projectJoin"  >参加确认</button>
+    </view>
+
+  </view>
+
+</view>

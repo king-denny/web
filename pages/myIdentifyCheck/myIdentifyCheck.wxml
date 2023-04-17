@@ -1,0 +1,53 @@
+<!--pages/myIdentifyCheck/myIdentifyCheck.wxml-->
+<view class="sgContainer ">
+    <view class="section1">
+        <!--抬头  -->
+        <!-- <view class="content_title">
+            <view class="titleText">个人信息</view>
+        </view> -->
+       <view class="line_item ">
+           <text class="billItemText">姓名:</text> 
+           <input class="billItemWide" type="text"  value="{{username}}" ></input>
+       </view>
+       <view class="line_item ">
+           <text class="billItemText">证件号码:</text> 
+           <input class="billItemWide" type="idcard"  value="{{idCard}}" ></input>
+       </view>       
+       <view class="line_item ">
+           <text class="billItemText">联系电话:</text> 
+           <input class="billItemWide"  value="{{mobile}}" ></input>
+       </view>
+      
+       <view class="line_item ">
+           <text class="billItemText">验证码:</text> 
+           <input class="billItemWide" bindinput="authcodeInput" ></input>
+           <button class="section-code" disabled="{{isClick}}"  bindtap="gainAuthCodeAction">
+            <text>{{time}}</text>
+            </button>
+       </view>
+
+       
+    </view>
+
+    <view class="line_item_btn button_center ">   
+        <view class="section-btn" bindtap="loginBtnClick" >提交身份核验</view>
+    </view>
+  
+    <block wx:if="{{isDone}}">
+        
+      
+        <view class="section2 pad_10">
+            <view class="line_item_result">
+                <text class="billItemTextDiu">身份信息验证结果:</text>                 
+            </view>
+            <view class="line_item button_center ">
+                <text class="billItemWideBlank">{{idCheckStr}}</text> 
+            </view> 
+
+        <view class="line_item button_center">
+            <text class="billItemWideBlank">{{phoneCheckStr}}</text> 
+        </view> 
+        </view>
+    </block>
+
+</view>

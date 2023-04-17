@@ -1,0 +1,20 @@
+<!--pages/Message/Message.wxml-->
+<view class="navbar">
+  <block wx:for="{{navbarTitle}}" wx:key="index">
+    <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
+<view class="tabLayer" wx:if="{{navbarActiveIndex==0}}">
+  <text>aaaaa</text>
+</view>
+<view class="tabLayer" wx:if="{{navbarActiveIndex==1}}">
+  <text>bbbb</text>
+</view>
+<view class="tabLayer" wx:if="{{navbarActiveIndex==2}}">
+  <text>ccccc</text>
+</view>
+<view class="tabLayer" wx:if="{{navbarActiveIndex==3}}">
+  <text>ddddd</text>
+</view>

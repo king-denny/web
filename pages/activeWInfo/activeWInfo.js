@@ -162,7 +162,7 @@ Page({
     //   url: '/pages/activeSignUp/activeSignUp?actid='+this.data.actId
     // })
 
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/activeQuestionare/activeQuestionare?actid='+this.data.actId
     })
 

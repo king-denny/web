@@ -14,7 +14,12 @@ page{
 }
 
 .corpTitle{
-  font-size: 60rpx;
+  width: 95%;
+  font-size: 50rpx;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing:1px;
+  margin-bottom: 25rpx;
 }
 
 .corpText{
@@ -50,6 +55,8 @@ page{
 
 
 .commentIconView {
+  margin-top: 5rpx;
+  margin-left: 15rpx;
   line-height: 70rpx;
   width: 50rpx;
   height: 50rpx;
@@ -65,7 +72,7 @@ page{
   background-color: white;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
-  margin-left: 10rpx;
+
   padding-left: 10rpx;      
   border-left: 8rpx solid #153661
 }
@@ -73,6 +80,7 @@ page{
 .recommend_font{
   font-size: 32rpx;
   font-weight: bold;
+  width: 100%;
 }
 
 
@@ -142,7 +150,8 @@ page{
 }
 .search-right{
   display: flex;
-  margin-left: 30rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
   height: 60rpx;
 
   padding-top: 10rpx;
@@ -159,9 +168,12 @@ page{
 }
 
 .oneComment{
+  min-height: 200rpx;
   padding-top: 6rpx;
   background-color: white;
-  margin-bottom: 6rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .oneJoiner{
@@ -175,10 +187,10 @@ page{
 }
 
 .iconView {
-  line-height: 60rpx;
-  width: 50rpx;
-  height: 50rpx;
-  border-radius: 15px;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
   vertical-align:middle;
   object-fit: cover;
 }
@@ -186,16 +198,17 @@ page{
 .commentText{
   line-height: 30rpx;
   /* width: 340rpx; */
-  font-size: 20rpx;
-  padding-left: 20rpx;
+  font-size: 40rpx;
+  padding-left: 10rpx;
 }
 
 .commentRichText{
   /* line-height: 30rpx; */
   /* width: 340rpx; */
-  font-size: 26rpx;
+  font-size: 30rpx;
    padding-left: 10rpx; 
    padding-right: 10rpx; 
+   flex:5
 }
 
 
@@ -238,4 +251,9 @@ page{
     box-shadow: 0px 2px 10px 0px rgba(196, 200, 204, 0.5);
     border: 2px solid #FFFFFF;
     border-radius: 100%;
+  }
+  .review{
+        display: flex;
+        flex-direction: row;
+        flex:1
   }

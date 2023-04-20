@@ -1,21 +1,21 @@
 <!--pages/myProjectList/myProjectLIst.wxml-->
 <view class="sgContainer">
 
-  
+<!--   
 <view class="section1">
-  <view >
-    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+   <view >
+  <open-data type="userAvatarUrl"></open-data>   
     <view class="userinfo-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
       </view>
-  </view>
+  </view> 
   <view class="name">
     <view>{{companyName}}</view>
     <view>{{userName}}</view>
     <view class="phone">{{mobile}}</view>
   </view>
   <view class="idcheckspan" ></view>    
-</view>
+</view> -->
 
 <view class="navbar">
   <block wx:for="{{navbarTitle}}" wx:key="index">
@@ -29,11 +29,16 @@
   <block wx:for="{{projectList}}" wx:key="index">
     <view class="projectEach" id="{{item.projectId}}" data-proId="{{item.projectId}}" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
       <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{item.projectUrl}}"/> </view>
-      <view class="articleTitle" > {{item.projectName}} </view>     
-      <view class="layout_Style"> 
+      <view class="projectText">
+        <view class="articleTitle" > {{item.projectName}}
+       </view>     
+       <view class="layout_Style"> 
         <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
         <view class="projectTitle " >{{item.signNum}} </view>  
-      </view>                    
+      </view>  
+      </view>
+     
+                    
     </view> 
   </block>
   </view>

@@ -15,7 +15,7 @@ page{
 /* 轮播图 */
 .indexSwiper {
   width: 100%;
-  height: 400rpx;
+  height: 500rpx;
 }
 
 /* 公告样式 */
@@ -65,7 +65,7 @@ page{
   display: flex;
   /* align-items: center; */
   flex-direction: column;
-  background-color: white; 
+  background-color: rgb(252, 249, 249); 
   padding:0 20rpx;
   border-bottom:2rpx dashed #ccc;
 }
@@ -334,13 +334,12 @@ page{
 
 
 .projectEach {
-  margin-top: 10rpx;  
-  margin-left: 3rpx;
-  margin-right: 3rpx;
+  /* margin-top: 10rpx;   */
+  /* margin-left: 3rpx;
+  margin-right: 3rpx; */
   align-items: center;
-  background-color: white; 
+  background-color: rgb(255, 255, 255); 
   padding:0 20rpx;
-  background-color: #F5F5F5;
   /* border-bottom:2rpx dashed #ccc; */
 }
 
@@ -411,15 +410,15 @@ page{
 }
 
 .content_switch{
-  height: 130rpx;  
+  flex:1;
+  height: 200rpx;  
   /* line-height: 130rpx; */
-  width: 97%;
-  /* background-color:#fff; */
-  margin-top: 10rpx;
-  margin-bottom: 4rpx;
+  background-color: white;
+  width: 100%;
   padding-top: 10rpx;
   padding-bottom: 4rpx;
-  padding-left: 10rpx;    
+  /* padding-left: 10rpx;   
+  padding-right: 10rpx;  */
   display: flex;    
   align-items: center;         
 }
@@ -447,7 +446,8 @@ page{
   align-items: center;
   justify-content: center;
   padding: 0rpx;
-  margin-left: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 
 .button_sel{
@@ -469,6 +469,7 @@ page{
   padding: 0rpx;
   border:  1rpx solid #b8b8b8;
   margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 
 .projectIconMargin {
@@ -496,5 +497,47 @@ page{
   flex-direction: row;
 }
 
+.projectText{
+  height:90rpx;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+.layout_Style1{
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.projectTitle1{
+  font-size: 40rpx;
+  margin-left: 5px;
+}
+.articleTitle1{
+  flex:2;
+  font-size: 35rpx;
+  text-align: left;
+  padding-left: 3rpx;
+}
+.all{
+  /* border-radius: 2%;
+  border: #da2808 ;
+  height: auto;
+  width: auto;
+  position: relative;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ top:-12px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center; */
+ background-color: white;
+}
+.swiper_def{
+  /* height: auto; */
+  /* flex:1 */
 
-
+}

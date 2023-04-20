@@ -220,7 +220,7 @@ navigator{
 }
 
 .numq{
-  width:180rpx;
+  width:207rpx;
   height:60rpx;
   line-height:60rpx;
   float:left;
@@ -316,3 +316,27 @@ navigator{
   vertical-align:middle;
   object-fit: cover;
 }
+.projectText{
+  height:90rpx;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+.layout_Style1{
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.projectTitle1{
+  font-size: 40rpx;
+  margin-left: 5px;
+}
+.articleTitle1{
+  flex:2;
+  font-size: 35rpx;
+  text-align: left;
+  padding-left: 3rpx;
+}
+

@@ -30,6 +30,7 @@ Page({
     commentPriList:[],
     commentSendText:'',
     memberList:[],
+    pit:''
 
 
   },
@@ -39,17 +40,17 @@ Page({
    */
   onLoad(options) {
 
+    console.log(   wx.getStorageSync('pit'));
+ 
     console.log('infoid='+options.infoId)
-
     this.setData({
+      pit:wx.getStorageSync('pit'),
       proId: options.infoId
     })
-    
     this.getProjectInfo(options.infoId)   
     // this.setData({
     //   projectAttend: getApp().globalData.projectAttend
     // })
-
     this.getProjectCommentInfo(options.infoId,0)   
     
     this.getProjectCommentInfo(options.infoId,1)
@@ -151,48 +152,6 @@ getProjectCommentInfo: function (infoId,qtype){
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-  
   iJoin: function (evt) {
 
     wx.navigateTo({

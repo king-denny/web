@@ -2,7 +2,7 @@
 <view class="sgContainer">
   <view class="section3">
     <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{actUrl}}"/> </view>
-    <view  class="corpText">{{actName}}</view>
+    <view  class="corpTexta">{{actName}}</view>
     <view>{{actContent}}</view>
   
     <view class="content_item" data-infoId="3" >

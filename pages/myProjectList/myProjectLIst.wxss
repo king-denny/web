@@ -122,8 +122,8 @@ page{
 }
 
 .articleTitle {
-  flex: 1;
-  font-size: 30rpx;
+  flex: 2;
+  font-size: 35rpx;
   text-align: left;
   padding-left: 10rpx;
 }
@@ -139,7 +139,7 @@ page{
 
 
 .commentIconView {
-  line-height: 70rpx;
+  line-height: 60rpx;
   width: 50rpx;
   height: 50rpx;
   border-radius: 4px;
@@ -206,4 +206,21 @@ page{
   transition: all 0.3s;
   border-bottom: 10rpx solid #1f4e79;
   color: #1f4e79;
+}
+.projectText{
+  height:90rpx;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+.layout_Style{
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.projectTitle{
+  font-size: 40rpx;
+  margin-left: 5px;
 }

@@ -18,6 +18,29 @@ Page({
     questionNum:0,  
     questionContent:'',
     haveOpt:false,
+    question:[{
+      questionType:'1',
+      questionDefaultVal:'你的公司名称'
+    },
+    {
+      questionType:'1',
+      questionDefaultVal:'你的年龄'
+    },{
+      questionType:'2',
+      questionDefaultVal:'你的性别',
+      questionSelList:[{type:'男',value:1},{type:'女',value:2}]
+
+    },
+    {
+      questionType:'3',
+      questionDefaultVal:'你的公司规模',
+      questionSelList:['小','大','中']
+    },
+    {
+      questionType:'1',
+      questionDefaultVal:'你的职位'
+    }
+  ],
     questionType:'',    //问题类型
     questionDefaultVal:'',  //问题默认内容 company
     questionAnswerStr:'',

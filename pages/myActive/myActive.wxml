@@ -2,20 +2,20 @@
 <view class="sgContainer">
 
   
-<view class="section1">
+<!-- <view class="section1">
   <view >
-    <!-- <open-data type="userAvatarUrl"></open-data>     -->
+     <open-data type="userAvatarUrl"></open-data>     
     <view class="userinfo-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
       </view>
-  </view>
+  </view> 
   <view class="name">
     <view>广州南沙诺华数据有限公司</view>
     <view>{{userName}}</view>
     <view class="phone">{{mobile}}</view>
   </view>
   <view class="idcheckspan" ></view>    
-</view>
+</view> -->
 
 <view class="content_switch">
         <view class="{{navbarActiveIndex === 0 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{0}}" catchtap="onNavBarTap">
@@ -93,7 +93,7 @@
          <scroll-view scroll-y="{{true}}"  bindscrolltolower="scrollbot"> 
           <view class="oneComment pad_top_10 ">
             <view class="layout_Style">
-              <image class="iconView" mode="widthFix" src="/image/s7.png"></image>
+              <!-- <image class="iconView" mode="widthFix" src="/image/s7.png"></image> -->
               <view>
                 <view class="commentText" >1382</view>
                 <view class="commentText" >今天 14:00</view>
@@ -105,7 +105,7 @@
           
           <view class="oneComment pad_top_10 ">
             <view class="layout_Style">
-              <image class="iconView" mode="widthFix" src="/image/s7.png"></image>
+              <!-- <image class="iconView" mode="widthFix" src="/image/s7.png"></image> -->
               <view>
                 <view class="commentText" >1382</view>
                 <view class="commentText" >今天 11:00</view>

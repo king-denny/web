@@ -9,7 +9,7 @@
         </swiper-item>
       </block>
   </swiper>
-
+<view class="all">
   <view class="content_switch">
         <view class="{{navbarActiveIndex === 0 ? 'button_sel' : 'button_default'}}" data-navbar-index="{{0}}" catchtap="onNavBarTap">
           <view ><image class="iconView" mode="widthFix" src="/icons/act.png"/> </view>
@@ -26,8 +26,6 @@
           <view class="text_font_l" >热度项目</view> 
         </view>               
   </view>
-
-
   <swiper class="swiper_def" current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
        
         <swiper-item wx:key="{{0}}"  >
@@ -60,28 +58,6 @@
               <view  class='showOrNot' bindtap='showMoreAct'>查看更多</view>
             </view>
             <view wx:else class="proclaNoData">没有活动信息</view>
-
-            <!-- <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
-                <view class="layout_Style" >
-                  <view class="articleTitle" > 从都花月宴 | 一场沉浸式体验风雅宋宴 </view>                                                            
-                  <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_yan.png"/> </view>
-                </view>                                    
-            </view>  -->
-
-            <!-- <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="actOntapDetail">   
-                <view class="layout_Style" >                 
-                  <view class="articleTitle layout_viewbottom" >
-                      <view  > 东南亚美食展 </view>   
-                      <view class="layout_Style layout_bottom">
-
-                        <image class="commentIconView pad_left_10" mode="widthFix" src="/icons/user.png"></image>
-                        <view class="projectTitle " >19 </view>                       
-                      </view>
-                  </view>                                                              
-                    <view class="projectIconViewSmall"><image class="projectIconMarginSmall" mode="heightFix" src="http://www.panda-cargo.com.cn/sw_ms.png"/> 
-                    </view>               
-                </view>                                    
-            </view>   -->
             
           </scroll-view>
         </swiper-item>
@@ -92,15 +68,15 @@
               
               <!-- 新闻 -->
                 <block wx:for="{{proclamations}}" wx:key="index">
-                  <view class="proclaEach {{index>2 ? 'more-item' : ''}}">
+                  <view class="proclaEach {{index>2 ? 'more-item' : ''}}"  id="{{item.newId}}" data-noticeUrl="{{item.newsUrl}}" data-noticeTit="{{item.newsTitle}}" bindtap="_handleProclaTitle">
                   <!-- <icon class="proclaIconsfont sg-procla-icon proclaIconMargin"></icon> -->
                   <view class="redian">
                   <image class="proclaIconMargin" src="/image/procla_icon_black.png"/>
-                  <view class="proclaTitle .singleline-content-ellipsis" id="{{item.newId}}" data-noticeUrl="{{item.newsUrl}}" data-noticeTit="{{item.newsTitle}}" bindtap="_handleProclaTitle">
+                  <view class="proclaTitle .singleline-content-ellipsis">
                   {{item.newsType?'【'+item.newsType +'】':''}} 
                 </view>
                   </view>
-                <view class="title">
+                <view class="title" style="overflow: hidden;">
                     {{item.newsTitle}}
                   </view> 
                
@@ -125,11 +101,14 @@
               <block wx:for="{{projectList}}" wx:key="index">
                 <view class="projectEach" id="{{item.projectId}}" data-proId="{{item.projectId}}" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
                   <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{item.projectUrl}}"/> </view>
-                  <view class="articleTitle" > {{item.projectName}} </view>     
-                  <view class="layout_Style"> 
-                    <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
-                    <view class="projectTitle " >{{item.signNum}} </view>  
-                  </view>                    
+                  <view class="projectText">
+        <view class="articleTitle1" > {{item.projectName}}
+       </view>     
+       <view class="layout_Style1"> 
+        <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
+        <view class="projectTitle1" >{{item.signNum}} </view>  
+      </view>  
+      </view>           
                 </view> 
 
               </block>
@@ -163,6 +142,8 @@
 
     </swiper>   
 
+</view>
+  
 
 
   <code>

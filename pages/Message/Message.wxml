@@ -1,12 +1,29 @@
 <!--pages/Message/Message.wxml-->
-<view class="navbar">
+<!-- <view class="navbar">
   <block wx:for="{{navbarTitle}}" wx:key="index">
     <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
       <text>{{item}}</text>
     </view>
   </block>
+</view> -->
+<van-tabs active="{{ navbarActiveIndex }}" bind:change="onChange" color="#1f4e79"  swipeable line-width="80px">
+  <van-tab wx:for="{{navbarTitle}}" wx:key="index" title="{{item}}">
+    <view  wx:if="{{index==0}}">
+  <text>qqq</text>
 </view>
-<view class="tabLayer" wx:if="{{navbarActiveIndex==0}}">
+    <view  wx:if="{{index==1}}">
+  <text>bbbb</text>
+</view>
+    <view  wx:if="{{index==2}}">
+  <text>aa</text>
+</view>
+    <view  wx:if="{{index==3}}">
+  <text>sss</text>
+</view>
+  </van-tab>
+
+</van-tabs>
+<!-- <view class="tabLayer" wx:if="{{navbarActiveIndex==0}}">
   <text>aaaaa</text>
 </view>
 <view class="tabLayer" wx:if="{{navbarActiveIndex==1}}">
@@ -17,4 +34,4 @@
 </view>
 <view class="tabLayer" wx:if="{{navbarActiveIndex==3}}">
   <text>ddddd</text>
-</view>
+</view> -->

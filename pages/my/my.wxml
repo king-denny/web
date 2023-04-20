@@ -1,16 +1,19 @@
-<!--pages/my/my.wxml-->
-
 
 <view class="section1">
-  <view >
+  <view class="head">
     <!-- <open-data type="userAvatarUrl"></open-data>     -->
-    <view class="userinfo-avatar" bindtap="showMyBasicInfo">
+    <!-- <view class="userinfo-avatar" bindtap="showMyBasicInfo">
         <open-data type="userAvatarUrl"></open-data>
-      </view>
+      </view> -->
+      <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <image class="head" src="{{avatarUrl}}"></image>
+</button> 
   </view>
+
+
   <view class="name">
     <view>{{company}}</view>
-    <view>{{userName}}</view>
+    <input type="nickname" 	bindnicknamereview class="weui-input" placeholder="请输入昵称"/>
     <view class="phone">{{mobile}}</view>
   </view>
   
@@ -34,19 +37,15 @@
 
 <!-- 最后一版，第三块 -->
 <view class="section3">  
-  <!-- 一般会员 -->
   <block>
-    <view class="content_span">
+    <!-- <view class="content_span">
+    
         <view class="content_item" data-infoId="3" bindtap='showMyBasicInfo'>
         <image class="iconView" mode="widthFix" src="/icons/my11.png"></image>
         <view class="mnuText" >基本信息</view>
         <view class="arrow"></view>
       </view>
-      <!-- <view class="content_item" data-infoId="1" bindtap='showmyfavinfo'>
-        <image class="iconView" mode="widthFix" src="/icons/q.png"></image>
-        <view class="mnuText">偏好设置</view>
-        <view class="arrow"></view>
-      </view> -->
+    
       <view class="content_item" data-infoId="2" bindtap='showmyAcinfo'>
         <image class="iconView" mode="widthFix" src="/icons/my3.png"></image>
         <view class="mnuText">我的活动</view>
@@ -67,8 +66,15 @@
         <view class="mnuText">我的消息</view>
         <view class="arrow"></view>        
       </view>
-    </view>    
+    </view>     -->
+    <van-grid column-num="2">
+  <van-grid-item icon="/icons/my11.png"  text="基本信息" bindtap='showMyBasicInfo' />
+  <van-grid-item bindtap='showmyAcinfo' icon="/icons/my3.png" text="我的活动" />
+  <van-grid-item bindtap='showmyProinfo' icon="/icons/project.png" text="我的项目" />
+  <van-grid-item bindtap='showmyMessage' icon="/icons/report.png" text="我的消息" />
+</van-grid>
   </block>
+
 
 </view>
 
@@ -94,25 +100,3 @@
 </view>
 
 
-
-<!-- 
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-
-</view> -->

@@ -1,10 +1,6 @@
 <!--pages/myIdentifyCheck/myIdentifyCheck.wxml-->
 <view class="sgContainer ">
-    <view class="section1">
-        <!--抬头  -->
-        <!-- <view class="content_title">
-            <view class="titleText">个人信息</view>
-        </view> -->
+    <!-- <view class="section1">
        <view class="line_item ">
            <text class="billItemText">姓名:</text> 
            <input class="billItemWide" type="text"  value="{{username}}" ></input>
@@ -27,15 +23,30 @@
        </view>
 
        
-    </view>
-
+    </view> -->
+    <van-cell-group>
+      <van-field model:value="{{ username }}" required clearable label="姓名"  placeholder="请输入姓名" />
+      <van-field model:value="{{ idCard }}" label="证件号码" placeholder="请输入证件号码" required border="{{ true }}" />
+      <van-field model:value="{{ mobile }}" label="联系电话" placeholder="请输入联系电话"  required border="{{ true }}" />
+    <van-field
+    model:value="{{ authcodeInput }}"
+    center
+    clearable
+    label="短信验证码"
+    placeholder="请输入短信验证码"
+    border="{{ false }}"
+    use-button-slot
+  >
+    <van-button slot="button" size="small" type="primary" disabled="{{isClick}}"  bind:click ="gainAuthCodeAction" >
+      <text>{{time}}</text>
+    </van-button>
+  </van-field>
+    </van-cell-group>
     <view class="line_item_btn button_center ">   
         <view class="section-btn" bindtap="loginBtnClick" >提交身份核验</view>
     </view>
   
     <block wx:if="{{isDone}}">
-        
-      
         <view class="section2 pad_10">
             <view class="line_item_result">
                 <text class="billItemTextDiu">身份信息验证结果:</text>                 

@@ -10,6 +10,7 @@ Page({
      */
     data: {
       visible: false,
+      avatarUrl:'',
       /** 下拉刷新，下拉加载参数 */
       totalPage: 1, //总页数page
       pagenum: 1,
@@ -31,11 +32,9 @@ Page({
       maskFlagHiden: true,
       pubCommentList:[],
       priCommentList:[],
-
-
+      hasUserInfo: false,
         motto: 'Hello World',
         userInfo: {},
-        hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         canIUseGetUserProfile: false,
         canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
@@ -46,6 +45,7 @@ Page({
           visible: !this.data.visible
         })
       },
+
       //上拉加载更多
       onReachBottom() {
         console.log("上拉加载更多")
@@ -118,10 +118,22 @@ Page({
         })
   
       },
-      
-      onLoad: function () {
+      onChooseAvatar(e) {
+        console.log(e);
+        const { avatarUrl } = e.detail 
+        wx.setStorageSync('pit', avatarUrl)
+        this.setData({
+          avatarUrl,
+        })
+      },
+      onLoad() {
           //如果个人信息不完善，跳转
           console.log("app="+getApp().globalData.userName+getApp().globalData.userMobile+getApp().globalData.userCompany)
+          if (wx.getUserProfile) {
+            this.setData({
+              canIUseGetUserProfile: true
+            })
+          }
           
           // if(getApp().globalData.userName=='' || getApp().globalData.userMobile=='' ||getApp().globalData.userCompany=='')
           // {
@@ -138,7 +150,7 @@ Page({
           })
 
           //获取个人信息,是否验证
-          //this.getUserInfos()
+          // this.getUserInfos()
          
           if (wx.getUserProfile) {
             this.setData({
@@ -304,8 +316,6 @@ Page({
       },
 
       doIdCheck: function (evt){      
-        
-        
         wx.navigateTo({
           url: '/pages/myIdentifyCheck/myIdentifyCheck'
         })
@@ -324,16 +334,6 @@ Page({
           messContent: event.detail.value
         })
       },
-
-
-     
-      // onLoad() {
-      //   if (wx.getUserProfile) {
-      //     this.setData({
-      //       canIUseGetUserProfile: true
-      //     })
-      //   }
-      // },
       getUserProfile(e) {
         // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
         wx.getUserProfile({
@@ -347,13 +347,13 @@ Page({
           }
         })
       },
-      getUserInfo(e) {
-        // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-        console.log(e)
-        this.setData({
-          userInfo: e.detail.userInfo,
-          hasUserInfo: true
-        })
-      }
+      // getUserInfo(e) {
+      //   // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
+      //   console.log(e)
+      //   this.setData({
+      //     userInfo: e.detail.userInfo,
+      //     hasUserInfo: true
+      //   })
+      // }
 
 })

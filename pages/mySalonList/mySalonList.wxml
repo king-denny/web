@@ -2,9 +2,8 @@
 <view class="sgContainer">
 
   
-<view class="section1">
+<!-- <view class="section1">
   <view >
-    <!-- <open-data type="userAvatarUrl"></open-data>     -->
     <view class="userinfo-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
       </view>
@@ -15,7 +14,7 @@
     <view class="phone">{{mobile}}</view>
   </view>
   <view class="idcheckspan" ></view>    
-</view>
+</view> -->
 
 <view wx:if="{{isActDataHave}}">
      

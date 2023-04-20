@@ -52,11 +52,10 @@
                 </view>
                 <view class="layout_Style">
                   <view class="smallText">金额</view>                 
-                  <text class="numq">{{queryFrNum}}</text>                                       
+                  <input class="numq" type="number" bindinput="bindKeyInput">{{queryFrNum}}</input>                                       
                   <view class="datespilt" >-</view>
-                  <text class="numq">{{queryToNum}}</text>                  
-                </view>
-                 
+                  <input class="numq" type="number" bindinput="bindKeyInput">{{queryToNum}}</input>                  
+                </view> 
               </view>
               <view class="tabLayer" hidden="{{tab[2]}}">
                   <!-- <text class="{{sort_type_id==0?'active':''}}" data-id="0" data-index="2" data-txt="顺序" bindtap="filter">不限</text> -->
@@ -64,15 +63,18 @@
                   <text class="{{sort_type_id==2?'active':''}}" data-id="2" data-index="2" data-txt="按金额" bindtap="filter">按金额</text>
               </view>
 
-            <view wx:if="{{isProjectDataHave}}" class="proclaContainer">
+            <view wx:if="{{true}}" class="proclaContainer">
               <block wx:for="{{projectList}}" wx:key="index">
                 <view class="projectEach" id="{{item.projectId}}" data-proId="{{item.projectId}}" data-noticeTit="测试"  bindtap="projectOntapDetail">                                                           
                   <view class="projectIconView"><image class="projectIconMargin" mode="widthFix" src="{{item.projectUrl}}"/> </view>
-                  <view class="articleTitle" > {{item.projectName}} </view>     
-                  <view class="layout_Style"> 
-                    <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
-                    <view class="projectTitle " >{{item.signNum}} </view>  
-                  </view>                    
+                  <view class="projectText">
+        <view class="articleTitle1" > {{item.projectName}}
+       </view>     
+       <view class="layout_Style1"> 
+        <image class="commentIconView" mode="widthFix" src="/icons/user.png"></image>
+        <view class="projectTitle1" >{{item.signNum}} </view>  
+      </view>  
+      </view>                      
                 </view> 
               </block>                              
                   <!-- <view class="projectEach" id="2" data-noticeUrl="https://mp.weixin.qq.com/s/-LlU9T37vVbl0bNn2cHlRA" data-noticeTit="测试"  bindtap="projectOntapDetail">   

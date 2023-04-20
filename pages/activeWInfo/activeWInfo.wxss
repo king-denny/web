@@ -18,8 +18,9 @@ page{
   font-size: 60rpx;
 }
 
-.corpText{
-  font-size: 32rpx;
+.corpTexta{
+  font-size: 45rpx;
+  font-weight:800
 }
 
 

@@ -68,7 +68,7 @@ showSwiperInfo: function (evt){
 },
 projectOntapDetail: function (evt){
 
-  wx.reLaunch({
+  wx.navigateTo({
     url: '/pages/projectInfo/projectInfo?infoId='+ evt.currentTarget.dataset.proid
   })
 
@@ -78,7 +78,7 @@ projectOntapDetail: function (evt){
     // this.setData({
     //   showMore: !this.data.showMore
     // })
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/newsList/newsList'
     }) 
 
@@ -88,7 +88,7 @@ projectOntapDetail: function (evt){
     // this.setData({
     //   showMore: !this.data.showMore
     // })
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/activeList/activeList'
     }) 
 
@@ -99,15 +99,15 @@ projectOntapDetail: function (evt){
     // })
     console.log('act canshu='+evt.currentTarget.dataset.actid)
 
-    // wx.reLaunch({
+    // wx.navigateTo({
     //   url: '/pages/activeInfo/activeInfo?infoId='+ evt.currentTarget.dataset.actid
     // }) 
     if(evt.currentTarget.dataset.noticetit==1){
-      wx.reLaunch({
+      wx.navigateTo({
         url: '/pages/activeWInfo/activeWInfo?infoId='+ evt.currentTarget.dataset.actid
       }) 
     }else{
-      wx.reLaunch({
+      wx.navigateTo({
         url: '/pages/activeInfo/activeInfo?infoId='+ evt.currentTarget.dataset.actid
       }) 
     }
@@ -273,7 +273,7 @@ projectOntapDetail: function (evt){
     return new Promise(function(resolve, reject){
       page = 0;
       wx.setNavigationBarTitle({
-        title: '湾媒创享'
+        title: '创享湾媒'
       })
       //暂时不用
       // loadMoreView = that.selectComponent("#loadMoreView")

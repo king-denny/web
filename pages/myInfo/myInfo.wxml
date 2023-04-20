@@ -6,13 +6,13 @@
       <view class="titleText">个人信息</view>
     </view>
     <van-cell-group>
-      <van-field model:value="{{ username }}" required clearable label="姓名" icon="question-o" placeholder="请输入姓名" />
+      <van-field model:value="{{ username }}" required clearable label="姓名"  placeholder="请输入姓名" />
       <van-field model:value="{{ company }}" label="公司名称" placeholder="请输入公司名称" required border="{{ true }}" />
-      <van-field model:value="{{ companyTitle }}" label="职位" placeholder="请输入职位" required border="{{ true }}" />
-      <van-field model:value="{{ idCard }}" type="idcard" label="证件号码" placeholder="请输入证件号码" required border="{{ true }}" />
+      <van-field model:value="{{ companyTitle }}" label="职位" placeholder="请输入职位"  border="{{ true }}" />
+      <van-field model:value="{{ idCard }}" type="idcard" label="证件号码" placeholder="请输入证件号码"  border="{{ true }}" />
       <van-field model:value="{{ mobile }}" type="number" label="联系电话" placeholder="请输入联系电话" required border="{{ true }}" />
-      <van-field model:value="{{ address }}" type="text" label="地址" placeholder="请输入地址" required border="{{ true }}" />
-      <van-field model:value="{{ email }}" type="text" label="EMail" placeholder="请输入EMail" required border="{{ true }}"   />
+      <van-field model:value="{{ address }}" type="text" label="地址" placeholder="请输入地址"  border="{{ true }}" />
+      <van-field model:value="{{ email }}" type="text" label="EMail" placeholder="请输入EMail"  border="{{ true }}"   />
 
       <van-field readonly clickable label="教育程度"  model:value="{{eduValue}}" placeholder="选择教育程度" bindtap="clickfield" />
       <van-popup show="{{show}}" position="bottom" round="true" custom-style="height: 50%;" bind:close="onClose">
@@ -20,12 +20,11 @@
       </van-popup>
 
       
-      <van-field readonly clickable label="客服人员" model:value="salerList" placeholder="选择客服人员" bindtap="clickPeople" />
+      <van-field readonly clickable label="客服人员" model:value="{{salerValue}}" placeholder="选择客服人员" bindtap="clickPeople" />
       <van-popup show="{{showPeople}}" position="bottom" round="true" custom-style="height: 50%;" bind:close="onClosePeople">
         <van-picker show-toolbar columns="{{occList}}" bind:cancel="oncancelPeople" bind:confirm="onConfirmPeople" />
       </van-popup>
-
-      <van-field
+ <van-field
     model:value="{{ authcodeInput }}"
     center
     clearable
@@ -34,11 +33,12 @@
     border="{{ false }}"
     use-button-slot
   >
-    <van-button slot="button" size="small" type="primary" disabled="{{isClick}}" bindtap="gainAuthCodeAction" >
+    <van-button slot="button" size="small" type="primary" disabled="{{isClick}}"  bind:click ="gainAuthCodeAction" >
       <text>{{time}}</text>
     </van-button>
   </van-field>
     </van-cell-group>
+     
     <!-- <view class="line_item ">
            <text class="billItemText">*公司名称:</text> 
            <input class="billItemWide" type="text" bindinput="companyInput" value="{{company}}" ></input>
